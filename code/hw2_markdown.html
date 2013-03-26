@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Homework 2</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h1>Homework 2</h1>
+
+<h2>Preprocessing</h2>
+
+<h3>Load Data</h3>
+
+<pre><code class="r">setwd(&quot;~/Users/SMW/Dropbox/Coursera/DA_012213/Homework/HW2/code&quot;)
+##
+## download.file(&#39;https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda&#39;,
+## &#39;../data/samsungData.rda&#39;)
+load(&quot;../data/samsungData.rda&quot;)
+</code></pre>
+
+<h3>Examine raw data</h3>
+
+<pre><code class="r">names(samsungData)
+</code></pre>
+
+<pre><code>##   [1] &quot;tBodyAcc-mean()-X&quot;                   
+##   [2] &quot;tBodyAcc-mean()-Y&quot;                   
+##   [3] &quot;tBodyAcc-mean()-Z&quot;                   
+##   [4] &quot;tBodyAcc-std()-X&quot;                    
+##   [5] &quot;tBodyAcc-std()-Y&quot;                    
+##   [6] &quot;tBodyAcc-std()-Z&quot;                    
+##   [7] &quot;tBodyAcc-mad()-X&quot;                    
+##   [8] &quot;tBodyAcc-mad()-Y&quot;                    
+##   [9] &quot;tBodyAcc-mad()-Z&quot;                    
+##  [10] &quot;tBodyAcc-max()-X&quot;                    
+##  [11] &quot;tBodyAcc-max()-Y&quot;                    
+##  [12] &quot;tBodyAcc-max()-Z&quot;                    
+##  [13] &quot;tBodyAcc-min()-X&quot;                    
+##  [14] &quot;tBodyAcc-min()-Y&quot;                    
+##  [15] &quot;tBodyAcc-min()-Z&quot;                    
+##  [16] &quot;tBodyAcc-sma()&quot;                      
+##  [17] &quot;tBodyAcc-energy()-X&quot;                 
+##  [18] &quot;tBodyAcc-energy()-Y&quot;                 
+##  [19] &quot;tBodyAcc-energy()-Z&quot;                 
+##  [20] &quot;tBodyAcc-iqr()-X&quot;                    
+##  [21] &quot;tBodyAcc-iqr()-Y&quot;                    
+##  [22] &quot;tBodyAcc-iqr()-Z&quot;                    
+##  [23] &quot;tBodyAcc-entropy()-X&quot;                
+##  [24] &quot;tBodyAcc-entropy()-Y&quot;                
+##  [25] &quot;tBodyAcc-entropy()-Z&quot;                
+##  [26] &quot;tBodyAcc-arCoeff()-X,1&quot;              
+##  [27] &quot;tBodyAcc-arCoeff()-X,2&quot;              
+##  [28] &quot;tBodyAcc-arCoeff()-X,3&quot;              
+##  [29] &quot;tBodyAcc-arCoeff()-X,4&quot;              
+##  [30] &quot;tBodyAcc-arCoeff()-Y,1&quot;              
+##  [31] &quot;tBodyAcc-arCoeff()-Y,2&quot;              
+##  [32] &quot;tBodyAcc-arCoeff()-Y,3&quot;              
+##  [33] &quot;tBodyAcc-arCoeff()-Y,4&quot;              
+##  [34] &quot;tBodyAcc-arCoeff()-Z,1&quot;              
+##  [35] &quot;tBodyAcc-arCoeff()-Z,2&quot;              
+##  [36] &quot;tBodyAcc-arCoeff()-Z,3&quot;              
+##  [37] &quot;tBodyAcc-arCoeff()-Z,4&quot;              
+##  [38] &quot;tBodyAcc-correlation()-X,Y&quot;          
+##  [39] &quot;tBodyAcc-correlation()-X,Z&quot;          
+##  [40] &quot;tBodyAcc-correlation()-Y,Z&quot;          
+##  [41] &quot;tGravityAcc-mean()-X&quot;                
+##  [42] &quot;tGravityAcc-mean()-Y&quot;                
+##  [43] &quot;tGravityAcc-mean()-Z&quot;                
+##  [44] &quot;tGravityAcc-std()-X&quot;                 
+##  [45] &quot;tGravityAcc-std()-Y&quot;                 
+##  [46] &quot;tGravityAcc-std()-Z&quot;                 
+##  [47] &quot;tGravityAcc-mad()-X&quot;                 
+##  [48] &quot;tGravityAcc-mad()-Y&quot;                 
+##  [49] &quot;tGravityAcc-mad()-Z&quot;                 
+##  [50] &quot;tGravityAcc-max()-X&quot;                 
+##  [51] &quot;tGravityAcc-max()-Y&quot;                 
+##  [52] &quot;tGravityAcc-max()-Z&quot;                 
+##  [53] &quot;tGravityAcc-min()-X&quot;                 
+##  [54] &quot;tGravityAcc-min()-Y&quot;                 
+##  [55] &quot;tGravityAcc-min()-Z&quot;                 
+##  [56] &quot;tGravityAcc-sma()&quot;                   
+##  [57] &quot;tGravityAcc-energy()-X&quot;              
+##  [58] &quot;tGravityAcc-energy()-Y&quot;              
+##  [59] &quot;tGravityAcc-energy()-Z&quot;              
+##  [60] &quot;tGravityAcc-iqr()-X&quot;                 
+##  [61] &quot;tGravityAcc-iqr()-Y&quot;                 
+##  [62] &quot;tGravityAcc-iqr()-Z&quot;                 
+##  [63] &quot;tGravityAcc-entropy()-X&quot;             
+##  [64] &quot;tGravityAcc-entropy()-Y&quot;             
+##  [65] &quot;tGravityAcc-entropy()-Z&quot;             
+##  [66] &quot;tGravityAcc-arCoeff()-X,1&quot;           
+##  [67] &quot;tGravityAcc-arCoeff()-X,2&quot;           
+##  [68] &quot;tGravityAcc-arCoeff()-X,3&quot;           
+##  [69] &quot;tGravityAcc-arCoeff()-X,4&quot;           
+##  [70] &quot;tGravityAcc-arCoeff()-Y,1&quot;           
+##  [71] &quot;tGravityAcc-arCoeff()-Y,2&quot;           
+##  [72] &quot;tGravityAcc-arCoeff()-Y,3&quot;           
+##  [73] &quot;tGravityAcc-arCoeff()-Y,4&quot;           
+##  [74] &quot;tGravityAcc-arCoeff()-Z,1&quot;           
+##  [75] &quot;tGravityAcc-arCoeff()-Z,2&quot;           
+##  [76] &quot;tGravityAcc-arCoeff()-Z,3&quot;           
+##  [77] &quot;tGravityAcc-arCoeff()-Z,4&quot;           
+##  [78] &quot;tGravityAcc-correlation()-X,Y&quot;       
+##  [79] &quot;tGravityAcc-correlation()-X,Z&quot;       
+##  [80] &quot;tGravityAcc-correlation()-Y,Z&quot;       
+##  [81] &quot;tBodyAccJerk-mean()-X&quot;               
+##  [82] &quot;tBodyAccJerk-mean()-Y&quot;               
+##  [83] &quot;tBodyAccJerk-mean()-Z&quot;               
+##  [84] &quot;tBodyAccJerk-std()-X&quot;                
+##  [85] &quot;tBodyAccJerk-std()-Y&quot;                
+##  [86] &quot;tBodyAccJerk-std()-Z&quot;                
+##  [87] &quot;tBodyAccJerk-mad()-X&quot;                
+##  [88] &quot;tBodyAccJerk-mad()-Y&quot;                
+##  [89] &quot;tBodyAccJerk-mad()-Z&quot;                
+##  [90] &quot;tBodyAccJerk-max()-X&quot;                
+##  [91] &quot;tBodyAccJerk-max()-Y&quot;                
+##  [92] &quot;tBodyAccJerk-max()-Z&quot;                
+##  [93] &quot;tBodyAccJerk-min()-X&quot;                
+##  [94] &quot;tBodyAccJerk-min()-Y&quot;                
+##  [95] &quot;tBodyAccJerk-min()-Z&quot;                
+##  [96] &quot;tBodyAccJerk-sma()&quot;                  
+##  [97] &quot;tBodyAccJerk-energy()-X&quot;             
+##  [98] &quot;tBodyAccJerk-energy()-Y&quot;             
+##  [99] &quot;tBodyAccJerk-energy()-Z&quot;             
+## [100] &quot;tBodyAccJerk-iqr()-X&quot;                
+## [101] &quot;tBodyAccJerk-iqr()-Y&quot;                
+## [102] &quot;tBodyAccJerk-iqr()-Z&quot;                
+## [103] &quot;tBodyAccJerk-entropy()-X&quot;            
+## [104] &quot;tBodyAccJerk-entropy()-Y&quot;            
+## [105] &quot;tBodyAccJerk-entropy()-Z&quot;            
+## [106] &quot;tBodyAccJerk-arCoeff()-X,1&quot;          
+## [107] &quot;tBodyAccJerk-arCoeff()-X,2&quot;          
+## [108] &quot;tBodyAccJerk-arCoeff()-X,3&quot;          
+## [109] &quot;tBodyAccJerk-arCoeff()-X,4&quot;          
+## [110] &quot;tBodyAccJerk-arCoeff()-Y,1&quot;          
+## [111] &quot;tBodyAccJerk-arCoeff()-Y,2&quot;          
+## [112] &quot;tBodyAccJerk-arCoeff()-Y,3&quot;          
+## [113] &quot;tBodyAccJerk-arCoeff()-Y,4&quot;          
+## [114] &quot;tBodyAccJerk-arCoeff()-Z,1&quot;          
+## [115] &quot;tBodyAccJerk-arCoeff()-Z,2&quot;          
+## [116] &quot;tBodyAccJerk-arCoeff()-Z,3&quot;          
+## [117] &quot;tBodyAccJerk-arCoeff()-Z,4&quot;          
+## [118] &quot;tBodyAccJerk-correlation()-X,Y&quot;      
+## [119] &quot;tBodyAccJerk-correlation()-X,Z&quot;      
+## [120] &quot;tBodyAccJerk-correlation()-Y,Z&quot;      
+## [121] &quot;tBodyGyro-mean()-X&quot;                  
+## [122] &quot;tBodyGyro-mean()-Y&quot;                  
+## [123] &quot;tBodyGyro-mean()-Z&quot;                  
+## [124] &quot;tBodyGyro-std()-X&quot;                   
+## [125] &quot;tBodyGyro-std()-Y&quot;                   
+## [126] &quot;tBodyGyro-std()-Z&quot;                   
+## [127] &quot;tBodyGyro-mad()-X&quot;                   
+## [128] &quot;tBodyGyro-mad()-Y&quot;                   
+## [129] &quot;tBodyGyro-mad()-Z&quot;                   
+## [130] &quot;tBodyGyro-max()-X&quot;                   
+## [131] &quot;tBodyGyro-max()-Y&quot;                   
+## [132] &quot;tBodyGyro-max()-Z&quot;                   
+## [133] &quot;tBodyGyro-min()-X&quot;                   
+## [134] &quot;tBodyGyro-min()-Y&quot;                   
+## [135] &quot;tBodyGyro-min()-Z&quot;                   
+## [136] &quot;tBodyGyro-sma()&quot;                     
+## [137] &quot;tBodyGyro-energy()-X&quot;                
+## [138] &quot;tBodyGyro-energy()-Y&quot;                
+## [139] &quot;tBodyGyro-energy()-Z&quot;                
+## [140] &quot;tBodyGyro-iqr()-X&quot;                   
+## [141] &quot;tBodyGyro-iqr()-Y&quot;                   
+## [142] &quot;tBodyGyro-iqr()-Z&quot;                   
+## [143] &quot;tBodyGyro-entropy()-X&quot;               
+## [144] &quot;tBodyGyro-entropy()-Y&quot;               
+## [145] &quot;tBodyGyro-entropy()-Z&quot;               
+## [146] &quot;tBodyGyro-arCoeff()-X,1&quot;             
+## [147] &quot;tBodyGyro-arCoeff()-X,2&quot;             
+## [148] &quot;tBodyGyro-arCoeff()-X,3&quot;             
+## [149] &quot;tBodyGyro-arCoeff()-X,4&quot;             
+## [150] &quot;tBodyGyro-arCoeff()-Y,1&quot;             
+## [151] &quot;tBodyGyro-arCoeff()-Y,2&quot;             
+## [152] &quot;tBodyGyro-arCoeff()-Y,3&quot;             
+## [153] &quot;tBodyGyro-arCoeff()-Y,4&quot;             
+## [154] &quot;tBodyGyro-arCoeff()-Z,1&quot;             
+## [155] &quot;tBodyGyro-arCoeff()-Z,2&quot;             
+## [156] &quot;tBodyGyro-arCoeff()-Z,3&quot;             
+## [157] &quot;tBodyGyro-arCoeff()-Z,4&quot;             
+## [158] &quot;tBodyGyro-correlation()-X,Y&quot;         
+## [159] &quot;tBodyGyro-correlation()-X,Z&quot;         
+## [160] &quot;tBodyGyro-correlation()-Y,Z&quot;         
+## [161] &quot;tBodyGyroJerk-mean()-X&quot;              
+## [162] &quot;tBodyGyroJerk-mean()-Y&quot;              
+## [163] &quot;tBodyGyroJerk-mean()-Z&quot;              
+## [164] &quot;tBodyGyroJerk-std()-X&quot;               
+## [165] &quot;tBodyGyroJerk-std()-Y&quot;               
+## [166] &quot;tBodyGyroJerk-std()-Z&quot;               
+## [167] &quot;tBodyGyroJerk-mad()-X&quot;               
+## [168] &quot;tBodyGyroJerk-mad()-Y&quot;               
+## [169] &quot;tBodyGyroJerk-mad()-Z&quot;               
+## [170] &quot;tBodyGyroJerk-max()-X&quot;               
+## [171] &quot;tBodyGyroJerk-max()-Y&quot;               
+## [172] &quot;tBodyGyroJerk-max()-Z&quot;               
+## [173] &quot;tBodyGyroJerk-min()-X&quot;               
+## [174] &quot;tBodyGyroJerk-min()-Y&quot;               
+## [175] &quot;tBodyGyroJerk-min()-Z&quot;               
+## [176] &quot;tBodyGyroJerk-sma()&quot;                 
+## [177] &quot;tBodyGyroJerk-energy()-X&quot;            
+## [178] &quot;tBodyGyroJerk-energy()-Y&quot;            
+## [179] &quot;tBodyGyroJerk-energy()-Z&quot;            
+## [180] &quot;tBodyGyroJerk-iqr()-X&quot;               
+## [181] &quot;tBodyGyroJerk-iqr()-Y&quot;               
+## [182] &quot;tBodyGyroJerk-iqr()-Z&quot;               
+## [183] &quot;tBodyGyroJerk-entropy()-X&quot;           
+## [184] &quot;tBodyGyroJerk-entropy()-Y&quot;           
+## [185] &quot;tBodyGyroJerk-entropy()-Z&quot;           
+## [186] &quot;tBodyGyroJerk-arCoeff()-X,1&quot;         
+## [187] &quot;tBodyGyroJerk-arCoeff()-X,2&quot;         
+## [188] &quot;tBodyGyroJerk-arCoeff()-X,3&quot;         
+## [189] &quot;tBodyGyroJerk-arCoeff()-X,4&quot;         
+## [190] &quot;tBodyGyroJerk-arCoeff()-Y,1&quot;         
+## [191] &quot;tBodyGyroJerk-arCoeff()-Y,2&quot;         
+## [192] &quot;tBodyGyroJerk-arCoeff()-Y,3&quot;         
+## [193] &quot;tBodyGyroJerk-arCoeff()-Y,4&quot;         
+## [194] &quot;tBodyGyroJerk-arCoeff()-Z,1&quot;         
+## [195] &quot;tBodyGyroJerk-arCoeff()-Z,2&quot;         
+## [196] &quot;tBodyGyroJerk-arCoeff()-Z,3&quot;         
+## [197] &quot;tBodyGyroJerk-arCoeff()-Z,4&quot;         
+## [198] &quot;tBodyGyroJerk-correlation()-X,Y&quot;     
+## [199] &quot;tBodyGyroJerk-correlation()-X,Z&quot;     
+## [200] &quot;tBodyGyroJerk-correlation()-Y,Z&quot;     
+## [201] &quot;tBodyAccMag-mean()&quot;                  
+## [202] &quot;tBodyAccMag-std()&quot;                   
+## [203] &quot;tBodyAccMag-mad()&quot;                   
+## [204] &quot;tBodyAccMag-max()&quot;                   
+## [205] &quot;tBodyAccMag-min()&quot;                   
+## [206] &quot;tBodyAccMag-sma()&quot;                   
+## [207] &quot;tBodyAccMag-energy()&quot;                
+## [208] &quot;tBodyAccMag-iqr()&quot;                   
+## [209] &quot;tBodyAccMag-entropy()&quot;               
+## [210] &quot;tBodyAccMag-arCoeff()1&quot;              
+## [211] &quot;tBodyAccMag-arCoeff()2&quot;              
+## [212] &quot;tBodyAccMag-arCoeff()3&quot;              
+## [213] &quot;tBodyAccMag-arCoeff()4&quot;              
+## [214] &quot;tGravityAccMag-mean()&quot;               
+## [215] &quot;tGravityAccMag-std()&quot;                
+## [216] &quot;tGravityAccMag-mad()&quot;                
+## [217] &quot;tGravityAccMag-max()&quot;                
+## [218] &quot;tGravityAccMag-min()&quot;                
+## [219] &quot;tGravityAccMag-sma()&quot;                
+## [220] &quot;tGravityAccMag-energy()&quot;             
+## [221] &quot;tGravityAccMag-iqr()&quot;                
+## [222] &quot;tGravityAccMag-entropy()&quot;            
+## [223] &quot;tGravityAccMag-arCoeff()1&quot;           
+## [224] &quot;tGravityAccMag-arCoeff()2&quot;           
+## [225] &quot;tGravityAccMag-arCoeff()3&quot;           
+## [226] &quot;tGravityAccMag-arCoeff()4&quot;           
+## [227] &quot;tBodyAccJerkMag-mean()&quot;              
+## [228] &quot;tBodyAccJerkMag-std()&quot;               
+## [229] &quot;tBodyAccJerkMag-mad()&quot;               
+## [230] &quot;tBodyAccJerkMag-max()&quot;               
+## [231] &quot;tBodyAccJerkMag-min()&quot;               
+## [232] &quot;tBodyAccJerkMag-sma()&quot;               
+## [233] &quot;tBodyAccJerkMag-energy()&quot;            
+## [234] &quot;tBodyAccJerkMag-iqr()&quot;               
+## [235] &quot;tBodyAccJerkMag-entropy()&quot;           
+## [236] &quot;tBodyAccJerkMag-arCoeff()1&quot;          
+## [237] &quot;tBodyAccJerkMag-arCoeff()2&quot;          
+## [238] &quot;tBodyAccJerkMag-arCoeff()3&quot;          
+## [239] &quot;tBodyAccJerkMag-arCoeff()4&quot;          
+## [240] &quot;tBodyGyroMag-mean()&quot;                 
+## [241] &quot;tBodyGyroMag-std()&quot;                  
+## [242] &quot;tBodyGyroMag-mad()&quot;                  
+## [243] &quot;tBodyGyroMag-max()&quot;                  
+## [244] &quot;tBodyGyroMag-min()&quot;                  
+## [245] &quot;tBodyGyroMag-sma()&quot;                  
+## [246] &quot;tBodyGyroMag-energy()&quot;               
+## [247] &quot;tBodyGyroMag-iqr()&quot;                  
+## [248] &quot;tBodyGyroMag-entropy()&quot;              
+## [249] &quot;tBodyGyroMag-arCoeff()1&quot;             
+## [250] &quot;tBodyGyroMag-arCoeff()2&quot;             
+## [251] &quot;tBodyGyroMag-arCoeff()3&quot;             
+## [252] &quot;tBodyGyroMag-arCoeff()4&quot;             
+## [253] &quot;tBodyGyroJerkMag-mean()&quot;             
+## [254] &quot;tBodyGyroJerkMag-std()&quot;              
+## [255] &quot;tBodyGyroJerkMag-mad()&quot;              
+## [256] &quot;tBodyGyroJerkMag-max()&quot;              
+## [257] &quot;tBodyGyroJerkMag-min()&quot;              
+## [258] &quot;tBodyGyroJerkMag-sma()&quot;              
+## [259] &quot;tBodyGyroJerkMag-energy()&quot;           
+## [260] &quot;tBodyGyroJerkMag-iqr()&quot;              
+## [261] &quot;tBodyGyroJerkMag-entropy()&quot;          
+## [262] &quot;tBodyGyroJerkMag-arCoeff()1&quot;         
+## [263] &quot;tBodyGyroJerkMag-arCoeff()2&quot;         
+## [264] &quot;tBodyGyroJerkMag-arCoeff()3&quot;         
+## [265] &quot;tBodyGyroJerkMag-arCoeff()4&quot;         
+## [266] &quot;fBodyAcc-mean()-X&quot;                   
+## [267] &quot;fBodyAcc-mean()-Y&quot;                   
+## [268] &quot;fBodyAcc-mean()-Z&quot;                   
+## [269] &quot;fBodyAcc-std()-X&quot;                    
+## [270] &quot;fBodyAcc-std()-Y&quot;                    
+## [271] &quot;fBodyAcc-std()-Z&quot;                    
+## [272] &quot;fBodyAcc-mad()-X&quot;                    
+## [273] &quot;fBodyAcc-mad()-Y&quot;                    
+## [274] &quot;fBodyAcc-mad()-Z&quot;                    
+## [275] &quot;fBodyAcc-max()-X&quot;                    
+## [276] &quot;fBodyAcc-max()-Y&quot;                    
+## [277] &quot;fBodyAcc-max()-Z&quot;                    
+## [278] &quot;fBodyAcc-min()-X&quot;                    
+## [279] &quot;fBodyAcc-min()-Y&quot;                    
+## [280] &quot;fBodyAcc-min()-Z&quot;                    
+## [281] &quot;fBodyAcc-sma()&quot;                      
+## [282] &quot;fBodyAcc-energy()-X&quot;                 
+## [283] &quot;fBodyAcc-energy()-Y&quot;                 
+## [284] &quot;fBodyAcc-energy()-Z&quot;                 
+## [285] &quot;fBodyAcc-iqr()-X&quot;                    
+## [286] &quot;fBodyAcc-iqr()-Y&quot;                    
+## [287] &quot;fBodyAcc-iqr()-Z&quot;                    
+## [288] &quot;fBodyAcc-entropy()-X&quot;                
+## [289] &quot;fBodyAcc-entropy()-Y&quot;                
+## [290] &quot;fBodyAcc-entropy()-Z&quot;                
+## [291] &quot;fBodyAcc-maxInds-X&quot;                  
+## [292] &quot;fBodyAcc-maxInds-Y&quot;                  
+## [293] &quot;fBodyAcc-maxInds-Z&quot;                  
+## [294] &quot;fBodyAcc-meanFreq()-X&quot;               
+## [295] &quot;fBodyAcc-meanFreq()-Y&quot;               
+## [296] &quot;fBodyAcc-meanFreq()-Z&quot;               
+## [297] &quot;fBodyAcc-skewness()-X&quot;               
+## [298] &quot;fBodyAcc-kurtosis()-X&quot;               
+## [299] &quot;fBodyAcc-skewness()-Y&quot;               
+## [300] &quot;fBodyAcc-kurtosis()-Y&quot;               
+## [301] &quot;fBodyAcc-skewness()-Z&quot;               
+## [302] &quot;fBodyAcc-kurtosis()-Z&quot;               
+## [303] &quot;fBodyAcc-bandsEnergy()-1,8&quot;          
+## [304] &quot;fBodyAcc-bandsEnergy()-9,16&quot;         
+## [305] &quot;fBodyAcc-bandsEnergy()-17,24&quot;        
+## [306] &quot;fBodyAcc-bandsEnergy()-25,32&quot;        
+## [307] &quot;fBodyAcc-bandsEnergy()-33,40&quot;        
+## [308] &quot;fBodyAcc-bandsEnergy()-41,48&quot;        
+## [309] &quot;fBodyAcc-bandsEnergy()-49,56&quot;        
+## [310] &quot;fBodyAcc-bandsEnergy()-57,64&quot;        
+## [311] &quot;fBodyAcc-bandsEnergy()-1,16&quot;         
+## [312] &quot;fBodyAcc-bandsEnergy()-17,32&quot;        
+## [313] &quot;fBodyAcc-bandsEnergy()-33,48&quot;        
+## [314] &quot;fBodyAcc-bandsEnergy()-49,64&quot;        
+## [315] &quot;fBodyAcc-bandsEnergy()-1,24&quot;         
+## [316] &quot;fBodyAcc-bandsEnergy()-25,48&quot;        
+## [317] &quot;fBodyAcc-bandsEnergy()-1,8&quot;          
+## [318] &quot;fBodyAcc-bandsEnergy()-9,16&quot;         
+## [319] &quot;fBodyAcc-bandsEnergy()-17,24&quot;        
+## [320] &quot;fBodyAcc-bandsEnergy()-25,32&quot;        
+## [321] &quot;fBodyAcc-bandsEnergy()-33,40&quot;        
+## [322] &quot;fBodyAcc-bandsEnergy()-41,48&quot;        
+## [323] &quot;fBodyAcc-bandsEnergy()-49,56&quot;        
+## [324] &quot;fBodyAcc-bandsEnergy()-57,64&quot;        
+## [325] &quot;fBodyAcc-bandsEnergy()-1,16&quot;         
+## [326] &quot;fBodyAcc-bandsEnergy()-17,32&quot;        
+## [327] &quot;fBodyAcc-bandsEnergy()-33,48&quot;        
+## [328] &quot;fBodyAcc-bandsEnergy()-49,64&quot;        
+## [329] &quot;fBodyAcc-bandsEnergy()-1,24&quot;         
+## [330] &quot;fBodyAcc-bandsEnergy()-25,48&quot;        
+## [331] &quot;fBodyAcc-bandsEnergy()-1,8&quot;          
+## [332] &quot;fBodyAcc-bandsEnergy()-9,16&quot;         
+## [333] &quot;fBodyAcc-bandsEnergy()-17,24&quot;        
+## [334] &quot;fBodyAcc-bandsEnergy()-25,32&quot;        
+## [335] &quot;fBodyAcc-bandsEnergy()-33,40&quot;        
+## [336] &quot;fBodyAcc-bandsEnergy()-41,48&quot;        
+## [337] &quot;fBodyAcc-bandsEnergy()-49,56&quot;        
+## [338] &quot;fBodyAcc-bandsEnergy()-57,64&quot;        
+## [339] &quot;fBodyAcc-bandsEnergy()-1,16&quot;         
+## [340] &quot;fBodyAcc-bandsEnergy()-17,32&quot;        
+## [341] &quot;fBodyAcc-bandsEnergy()-33,48&quot;        
+## [342] &quot;fBodyAcc-bandsEnergy()-49,64&quot;        
+## [343] &quot;fBodyAcc-bandsEnergy()-1,24&quot;         
+## [344] &quot;fBodyAcc-bandsEnergy()-25,48&quot;        
+## [345] &quot;fBodyAccJerk-mean()-X&quot;               
+## [346] &quot;fBodyAccJerk-mean()-Y&quot;               
+## [347] &quot;fBodyAccJerk-mean()-Z&quot;               
+## [348] &quot;fBodyAccJerk-std()-X&quot;                
+## [349] &quot;fBodyAccJerk-std()-Y&quot;                
+## [350] &quot;fBodyAccJerk-std()-Z&quot;                
+## [351] &quot;fBodyAccJerk-mad()-X&quot;                
+## [352] &quot;fBodyAccJerk-mad()-Y&quot;                
+## [353] &quot;fBodyAccJerk-mad()-Z&quot;                
+## [354] &quot;fBodyAccJerk-max()-X&quot;                
+## [355] &quot;fBodyAccJerk-max()-Y&quot;                
+## [356] &quot;fBodyAccJerk-max()-Z&quot;                
+## [357] &quot;fBodyAccJerk-min()-X&quot;                
+## [358] &quot;fBodyAccJerk-min()-Y&quot;                
+## [359] &quot;fBodyAccJerk-min()-Z&quot;                
+## [360] &quot;fBodyAccJerk-sma()&quot;                  
+## [361] &quot;fBodyAccJerk-energy()-X&quot;             
+## [362] &quot;fBodyAccJerk-energy()-Y&quot;             
+## [363] &quot;fBodyAccJerk-energy()-Z&quot;             
+## [364] &quot;fBodyAccJerk-iqr()-X&quot;                
+## [365] &quot;fBodyAccJerk-iqr()-Y&quot;                
+## [366] &quot;fBodyAccJerk-iqr()-Z&quot;                
+## [367] &quot;fBodyAccJerk-entropy()-X&quot;            
+## [368] &quot;fBodyAccJerk-entropy()-Y&quot;            
+## [369] &quot;fBodyAccJerk-entropy()-Z&quot;            
+## [370] &quot;fBodyAccJerk-maxInds-X&quot;              
+## [371] &quot;fBodyAccJerk-maxInds-Y&quot;              
+## [372] &quot;fBodyAccJerk-maxInds-Z&quot;              
+## [373] &quot;fBodyAccJerk-meanFreq()-X&quot;           
+## [374] &quot;fBodyAccJerk-meanFreq()-Y&quot;           
+## [375] &quot;fBodyAccJerk-meanFreq()-Z&quot;           
+## [376] &quot;fBodyAccJerk-skewness()-X&quot;           
+## [377] &quot;fBodyAccJerk-kurtosis()-X&quot;           
+## [378] &quot;fBodyAccJerk-skewness()-Y&quot;           
+## [379] &quot;fBodyAccJerk-kurtosis()-Y&quot;           
+## [380] &quot;fBodyAccJerk-skewness()-Z&quot;           
+## [381] &quot;fBodyAccJerk-kurtosis()-Z&quot;           
+## [382] &quot;fBodyAccJerk-bandsEnergy()-1,8&quot;      
+## [383] &quot;fBodyAccJerk-bandsEnergy()-9,16&quot;     
+## [384] &quot;fBodyAccJerk-bandsEnergy()-17,24&quot;    
+## [385] &quot;fBodyAccJerk-bandsEnergy()-25,32&quot;    
+## [386] &quot;fBodyAccJerk-bandsEnergy()-33,40&quot;    
+## [387] &quot;fBodyAccJerk-bandsEnergy()-41,48&quot;    
+## [388] &quot;fBodyAccJerk-bandsEnergy()-49,56&quot;    
+## [389] &quot;fBodyAccJerk-bandsEnergy()-57,64&quot;    
+## [390] &quot;fBodyAccJerk-bandsEnergy()-1,16&quot;     
+## [391] &quot;fBodyAccJerk-bandsEnergy()-17,32&quot;    
+## [392] &quot;fBodyAccJerk-bandsEnergy()-33,48&quot;    
+## [393] &quot;fBodyAccJerk-bandsEnergy()-49,64&quot;    
+## [394] &quot;fBodyAccJerk-bandsEnergy()-1,24&quot;     
+## [395] &quot;fBodyAccJerk-bandsEnergy()-25,48&quot;    
+## [396] &quot;fBodyAccJerk-bandsEnergy()-1,8&quot;      
+## [397] &quot;fBodyAccJerk-bandsEnergy()-9,16&quot;     
+## [398] &quot;fBodyAccJerk-bandsEnergy()-17,24&quot;    
+## [399] &quot;fBodyAccJerk-bandsEnergy()-25,32&quot;    
+## [400] &quot;fBodyAccJerk-bandsEnergy()-33,40&quot;    
+## [401] &quot;fBodyAccJerk-bandsEnergy()-41,48&quot;    
+## [402] &quot;fBodyAccJerk-bandsEnergy()-49,56&quot;    
+## [403] &quot;fBodyAccJerk-bandsEnergy()-57,64&quot;    
+## [404] &quot;fBodyAccJerk-bandsEnergy()-1,16&quot;     
+## [405] &quot;fBodyAccJerk-bandsEnergy()-17,32&quot;    
+## [406] &quot;fBodyAccJerk-bandsEnergy()-33,48&quot;    
+## [407] &quot;fBodyAccJerk-bandsEnergy()-49,64&quot;    
+## [408] &quot;fBodyAccJerk-bandsEnergy()-1,24&quot;     
+## [409] &quot;fBodyAccJerk-bandsEnergy()-25,48&quot;    
+## [410] &quot;fBodyAccJerk-bandsEnergy()-1,8&quot;      
+## [411] &quot;fBodyAccJerk-bandsEnergy()-9,16&quot;     
+## [412] &quot;fBodyAccJerk-bandsEnergy()-17,24&quot;    
+## [413] &quot;fBodyAccJerk-bandsEnergy()-25,32&quot;    
+## [414] &quot;fBodyAccJerk-bandsEnergy()-33,40&quot;    
+## [415] &quot;fBodyAccJerk-bandsEnergy()-41,48&quot;    
+## [416] &quot;fBodyAccJerk-bandsEnergy()-49,56&quot;    
+## [417] &quot;fBodyAccJerk-bandsEnergy()-57,64&quot;    
+## [418] &quot;fBodyAccJerk-bandsEnergy()-1,16&quot;     
+## [419] &quot;fBodyAccJerk-bandsEnergy()-17,32&quot;    
+## [420] &quot;fBodyAccJerk-bandsEnergy()-33,48&quot;    
+## [421] &quot;fBodyAccJerk-bandsEnergy()-49,64&quot;    
+## [422] &quot;fBodyAccJerk-bandsEnergy()-1,24&quot;     
+## [423] &quot;fBodyAccJerk-bandsEnergy()-25,48&quot;    
+## [424] &quot;fBodyGyro-mean()-X&quot;                  
+## [425] &quot;fBodyGyro-mean()-Y&quot;                  
+## [426] &quot;fBodyGyro-mean()-Z&quot;                  
+## [427] &quot;fBodyGyro-std()-X&quot;                   
+## [428] &quot;fBodyGyro-std()-Y&quot;                   
+## [429] &quot;fBodyGyro-std()-Z&quot;                   
+## [430] &quot;fBodyGyro-mad()-X&quot;                   
+## [431] &quot;fBodyGyro-mad()-Y&quot;                   
+## [432] &quot;fBodyGyro-mad()-Z&quot;                   
+## [433] &quot;fBodyGyro-max()-X&quot;                   
+## [434] &quot;fBodyGyro-max()-Y&quot;                   
+## [435] &quot;fBodyGyro-max()-Z&quot;                   
+## [436] &quot;fBodyGyro-min()-X&quot;                   
+## [437] &quot;fBodyGyro-min()-Y&quot;                   
+## [438] &quot;fBodyGyro-min()-Z&quot;                   
+## [439] &quot;fBodyGyro-sma()&quot;                     
+## [440] &quot;fBodyGyro-energy()-X&quot;                
+## [441] &quot;fBodyGyro-energy()-Y&quot;                
+## [442] &quot;fBodyGyro-energy()-Z&quot;                
+## [443] &quot;fBodyGyro-iqr()-X&quot;                   
+## [444] &quot;fBodyGyro-iqr()-Y&quot;                   
+## [445] &quot;fBodyGyro-iqr()-Z&quot;                   
+## [446] &quot;fBodyGyro-entropy()-X&quot;               
+## [447] &quot;fBodyGyro-entropy()-Y&quot;               
+## [448] &quot;fBodyGyro-entropy()-Z&quot;               
+## [449] &quot;fBodyGyro-maxInds-X&quot;                 
+## [450] &quot;fBodyGyro-maxInds-Y&quot;                 
+## [451] &quot;fBodyGyro-maxInds-Z&quot;                 
+## [452] &quot;fBodyGyro-meanFreq()-X&quot;              
+## [453] &quot;fBodyGyro-meanFreq()-Y&quot;              
+## [454] &quot;fBodyGyro-meanFreq()-Z&quot;              
+## [455] &quot;fBodyGyro-skewness()-X&quot;              
+## [456] &quot;fBodyGyro-kurtosis()-X&quot;              
+## [457] &quot;fBodyGyro-skewness()-Y&quot;              
+## [458] &quot;fBodyGyro-kurtosis()-Y&quot;              
+## [459] &quot;fBodyGyro-skewness()-Z&quot;              
+## [460] &quot;fBodyGyro-kurtosis()-Z&quot;              
+## [461] &quot;fBodyGyro-bandsEnergy()-1,8&quot;         
+## [462] &quot;fBodyGyro-bandsEnergy()-9,16&quot;        
+## [463] &quot;fBodyGyro-bandsEnergy()-17,24&quot;       
+## [464] &quot;fBodyGyro-bandsEnergy()-25,32&quot;       
+## [465] &quot;fBodyGyro-bandsEnergy()-33,40&quot;       
+## [466] &quot;fBodyGyro-bandsEnergy()-41,48&quot;       
+## [467] &quot;fBodyGyro-bandsEnergy()-49,56&quot;       
+## [468] &quot;fBodyGyro-bandsEnergy()-57,64&quot;       
+## [469] &quot;fBodyGyro-bandsEnergy()-1,16&quot;        
+## [470] &quot;fBodyGyro-bandsEnergy()-17,32&quot;       
+## [471] &quot;fBodyGyro-bandsEnergy()-33,48&quot;       
+## [472] &quot;fBodyGyro-bandsEnergy()-49,64&quot;       
+## [473] &quot;fBodyGyro-bandsEnergy()-1,24&quot;        
+## [474] &quot;fBodyGyro-bandsEnergy()-25,48&quot;       
+## [475] &quot;fBodyGyro-bandsEnergy()-1,8&quot;         
+## [476] &quot;fBodyGyro-bandsEnergy()-9,16&quot;        
+## [477] &quot;fBodyGyro-bandsEnergy()-17,24&quot;       
+## [478] &quot;fBodyGyro-bandsEnergy()-25,32&quot;       
+## [479] &quot;fBodyGyro-bandsEnergy()-33,40&quot;       
+## [480] &quot;fBodyGyro-bandsEnergy()-41,48&quot;       
+## [481] &quot;fBodyGyro-bandsEnergy()-49,56&quot;       
+## [482] &quot;fBodyGyro-bandsEnergy()-57,64&quot;       
+## [483] &quot;fBodyGyro-bandsEnergy()-1,16&quot;        
+## [484] &quot;fBodyGyro-bandsEnergy()-17,32&quot;       
+## [485] &quot;fBodyGyro-bandsEnergy()-33,48&quot;       
+## [486] &quot;fBodyGyro-bandsEnergy()-49,64&quot;       
+## [487] &quot;fBodyGyro-bandsEnergy()-1,24&quot;        
+## [488] &quot;fBodyGyro-bandsEnergy()-25,48&quot;       
+## [489] &quot;fBodyGyro-bandsEnergy()-1,8&quot;         
+## [490] &quot;fBodyGyro-bandsEnergy()-9,16&quot;        
+## [491] &quot;fBodyGyro-bandsEnergy()-17,24&quot;       
+## [492] &quot;fBodyGyro-bandsEnergy()-25,32&quot;       
+## [493] &quot;fBodyGyro-bandsEnergy()-33,40&quot;       
+## [494] &quot;fBodyGyro-bandsEnergy()-41,48&quot;       
+## [495] &quot;fBodyGyro-bandsEnergy()-49,56&quot;       
+## [496] &quot;fBodyGyro-bandsEnergy()-57,64&quot;       
+## [497] &quot;fBodyGyro-bandsEnergy()-1,16&quot;        
+## [498] &quot;fBodyGyro-bandsEnergy()-17,32&quot;       
+## [499] &quot;fBodyGyro-bandsEnergy()-33,48&quot;       
+## [500] &quot;fBodyGyro-bandsEnergy()-49,64&quot;       
+## [501] &quot;fBodyGyro-bandsEnergy()-1,24&quot;        
+## [502] &quot;fBodyGyro-bandsEnergy()-25,48&quot;       
+## [503] &quot;fBodyAccMag-mean()&quot;                  
+## [504] &quot;fBodyAccMag-std()&quot;                   
+## [505] &quot;fBodyAccMag-mad()&quot;                   
+## [506] &quot;fBodyAccMag-max()&quot;                   
+## [507] &quot;fBodyAccMag-min()&quot;                   
+## [508] &quot;fBodyAccMag-sma()&quot;                   
+## [509] &quot;fBodyAccMag-energy()&quot;                
+## [510] &quot;fBodyAccMag-iqr()&quot;                   
+## [511] &quot;fBodyAccMag-entropy()&quot;               
+## [512] &quot;fBodyAccMag-maxInds&quot;                 
+## [513] &quot;fBodyAccMag-meanFreq()&quot;              
+## [514] &quot;fBodyAccMag-skewness()&quot;              
+## [515] &quot;fBodyAccMag-kurtosis()&quot;              
+## [516] &quot;fBodyBodyAccJerkMag-mean()&quot;          
+## [517] &quot;fBodyBodyAccJerkMag-std()&quot;           
+## [518] &quot;fBodyBodyAccJerkMag-mad()&quot;           
+## [519] &quot;fBodyBodyAccJerkMag-max()&quot;           
+## [520] &quot;fBodyBodyAccJerkMag-min()&quot;           
+## [521] &quot;fBodyBodyAccJerkMag-sma()&quot;           
+## [522] &quot;fBodyBodyAccJerkMag-energy()&quot;        
+## [523] &quot;fBodyBodyAccJerkMag-iqr()&quot;           
+## [524] &quot;fBodyBodyAccJerkMag-entropy()&quot;       
+## [525] &quot;fBodyBodyAccJerkMag-maxInds&quot;         
+## [526] &quot;fBodyBodyAccJerkMag-meanFreq()&quot;      
+## [527] &quot;fBodyBodyAccJerkMag-skewness()&quot;      
+## [528] &quot;fBodyBodyAccJerkMag-kurtosis()&quot;      
+## [529] &quot;fBodyBodyGyroMag-mean()&quot;             
+## [530] &quot;fBodyBodyGyroMag-std()&quot;              
+## [531] &quot;fBodyBodyGyroMag-mad()&quot;              
+## [532] &quot;fBodyBodyGyroMag-max()&quot;              
+## [533] &quot;fBodyBodyGyroMag-min()&quot;              
+## [534] &quot;fBodyBodyGyroMag-sma()&quot;              
+## [535] &quot;fBodyBodyGyroMag-energy()&quot;           
+## [536] &quot;fBodyBodyGyroMag-iqr()&quot;              
+## [537] &quot;fBodyBodyGyroMag-entropy()&quot;          
+## [538] &quot;fBodyBodyGyroMag-maxInds&quot;            
+## [539] &quot;fBodyBodyGyroMag-meanFreq()&quot;         
+## [540] &quot;fBodyBodyGyroMag-skewness()&quot;         
+## [541] &quot;fBodyBodyGyroMag-kurtosis()&quot;         
+## [542] &quot;fBodyBodyGyroJerkMag-mean()&quot;         
+## [543] &quot;fBodyBodyGyroJerkMag-std()&quot;          
+## [544] &quot;fBodyBodyGyroJerkMag-mad()&quot;          
+## [545] &quot;fBodyBodyGyroJerkMag-max()&quot;          
+## [546] &quot;fBodyBodyGyroJerkMag-min()&quot;          
+## [547] &quot;fBodyBodyGyroJerkMag-sma()&quot;          
+## [548] &quot;fBodyBodyGyroJerkMag-energy()&quot;       
+## [549] &quot;fBodyBodyGyroJerkMag-iqr()&quot;          
+## [550] &quot;fBodyBodyGyroJerkMag-entropy()&quot;      
+## [551] &quot;fBodyBodyGyroJerkMag-maxInds&quot;        
+## [552] &quot;fBodyBodyGyroJerkMag-meanFreq()&quot;     
+## [553] &quot;fBodyBodyGyroJerkMag-skewness()&quot;     
+## [554] &quot;fBodyBodyGyroJerkMag-kurtosis()&quot;     
+## [555] &quot;angle(tBodyAccMean,gravity)&quot;         
+## [556] &quot;angle(tBodyAccJerkMean),gravityMean)&quot;
+## [557] &quot;angle(tBodyGyroMean,gravityMean)&quot;    
+## [558] &quot;angle(tBodyGyroJerkMean,gravityMean)&quot;
+## [559] &quot;angle(X,gravityMean)&quot;                
+## [560] &quot;angle(Y,gravityMean)&quot;                
+## [561] &quot;angle(Z,gravityMean)&quot;                
+## [562] &quot;subject&quot;                             
+## [563] &quot;activity&quot;
+</code></pre>
+
+<pre><code class="r">table(is.na(samsungData))  ## no NAs
+</code></pre>
+
+<pre><code>## 
+##   FALSE 
+## 4139176
+</code></pre>
+
+<pre><code class="r">table(samsungData$subject)
+</code></pre>
+
+<pre><code>## 
+##   1   3   5   6   7   8  11  14  15  16  17  19  21  22  23  25  26  27 
+## 347 341 302 325 308 281 316 323 328 366 368 360 408 321 372 409 392 376 
+##  28  29  30 
+## 382 344 383
+</code></pre>
+
+<p>There are no NAs found.
+21 subjects total, with numeric identifiers.</p>
+
+<h3>Data Munging</h3>
+
+<p>Make variable names syntactically correct by removing parentheses, commas, etc.</p>
+
+<pre><code class="r">nameVec &lt;- make.names(names(samsungData), unique = TRUE)
+names(samsungData) &lt;- nameVec
+names(samsungData)
+</code></pre>
+
+<pre><code>##   [1] &quot;tBodyAcc.mean...X&quot;                   
+##   [2] &quot;tBodyAcc.mean...Y&quot;                   
+##   [3] &quot;tBodyAcc.mean...Z&quot;                   
+##   [4] &quot;tBodyAcc.std...X&quot;                    
+##   [5] &quot;tBodyAcc.std...Y&quot;                    
+##   [6] &quot;tBodyAcc.std...Z&quot;                    
+##   [7] &quot;tBodyAcc.mad...X&quot;                    
+##   [8] &quot;tBodyAcc.mad...Y&quot;                    
+##   [9] &quot;tBodyAcc.mad...Z&quot;                    
+##  [10] &quot;tBodyAcc.max...X&quot;                    
+##  [11] &quot;tBodyAcc.max...Y&quot;                    
+##  [12] &quot;tBodyAcc.max...Z&quot;                    
+##  [13] &quot;tBodyAcc.min...X&quot;                    
+##  [14] &quot;tBodyAcc.min...Y&quot;                    
+##  [15] &quot;tBodyAcc.min...Z&quot;                    
+##  [16] &quot;tBodyAcc.sma..&quot;                      
+##  [17] &quot;tBodyAcc.energy...X&quot;                 
+##  [18] &quot;tBodyAcc.energy...Y&quot;                 
+##  [19] &quot;tBodyAcc.energy...Z&quot;                 
+##  [20] &quot;tBodyAcc.iqr...X&quot;                    
+##  [21] &quot;tBodyAcc.iqr...Y&quot;                    
+##  [22] &quot;tBodyAcc.iqr...Z&quot;                    
+##  [23] &quot;tBodyAcc.entropy...X&quot;                
+##  [24] &quot;tBodyAcc.entropy...Y&quot;                
+##  [25] &quot;tBodyAcc.entropy...Z&quot;                
+##  [26] &quot;tBodyAcc.arCoeff...X.1&quot;              
+##  [27] &quot;tBodyAcc.arCoeff...X.2&quot;              
+##  [28] &quot;tBodyAcc.arCoeff...X.3&quot;              
+##  [29] &quot;tBodyAcc.arCoeff...X.4&quot;              
+##  [30] &quot;tBodyAcc.arCoeff...Y.1&quot;              
+##  [31] &quot;tBodyAcc.arCoeff...Y.2&quot;              
+##  [32] &quot;tBodyAcc.arCoeff...Y.3&quot;              
+##  [33] &quot;tBodyAcc.arCoeff...Y.4&quot;              
+##  [34] &quot;tBodyAcc.arCoeff...Z.1&quot;              
+##  [35] &quot;tBodyAcc.arCoeff...Z.2&quot;              
+##  [36] &quot;tBodyAcc.arCoeff...Z.3&quot;              
+##  [37] &quot;tBodyAcc.arCoeff...Z.4&quot;              
+##  [38] &quot;tBodyAcc.correlation...X.Y&quot;          
+##  [39] &quot;tBodyAcc.correlation...X.Z&quot;          
+##  [40] &quot;tBodyAcc.correlation...Y.Z&quot;          
+##  [41] &quot;tGravityAcc.mean...X&quot;                
+##  [42] &quot;tGravityAcc.mean...Y&quot;                
+##  [43] &quot;tGravityAcc.mean...Z&quot;                
+##  [44] &quot;tGravityAcc.std...X&quot;                 
+##  [45] &quot;tGravityAcc.std...Y&quot;                 
+##  [46] &quot;tGravityAcc.std...Z&quot;                 
+##  [47] &quot;tGravityAcc.mad...X&quot;                 
+##  [48] &quot;tGravityAcc.mad...Y&quot;                 
+##  [49] &quot;tGravityAcc.mad...Z&quot;                 
+##  [50] &quot;tGravityAcc.max...X&quot;                 
+##  [51] &quot;tGravityAcc.max...Y&quot;                 
+##  [52] &quot;tGravityAcc.max...Z&quot;                 
+##  [53] &quot;tGravityAcc.min...X&quot;                 
+##  [54] &quot;tGravityAcc.min...Y&quot;                 
+##  [55] &quot;tGravityAcc.min...Z&quot;                 
+##  [56] &quot;tGravityAcc.sma..&quot;                   
+##  [57] &quot;tGravityAcc.energy...X&quot;              
+##  [58] &quot;tGravityAcc.energy...Y&quot;              
+##  [59] &quot;tGravityAcc.energy...Z&quot;              
+##  [60] &quot;tGravityAcc.iqr...X&quot;                 
+##  [61] &quot;tGravityAcc.iqr...Y&quot;                 
+##  [62] &quot;tGravityAcc.iqr...Z&quot;                 
+##  [63] &quot;tGravityAcc.entropy...X&quot;             
+##  [64] &quot;tGravityAcc.entropy...Y&quot;             
+##  [65] &quot;tGravityAcc.entropy...Z&quot;             
+##  [66] &quot;tGravityAcc.arCoeff...X.1&quot;           
+##  [67] &quot;tGravityAcc.arCoeff...X.2&quot;           
+##  [68] &quot;tGravityAcc.arCoeff...X.3&quot;           
+##  [69] &quot;tGravityAcc.arCoeff...X.4&quot;           
+##  [70] &quot;tGravityAcc.arCoeff...Y.1&quot;           
+##  [71] &quot;tGravityAcc.arCoeff...Y.2&quot;           
+##  [72] &quot;tGravityAcc.arCoeff...Y.3&quot;           
+##  [73] &quot;tGravityAcc.arCoeff...Y.4&quot;           
+##  [74] &quot;tGravityAcc.arCoeff...Z.1&quot;           
+##  [75] &quot;tGravityAcc.arCoeff...Z.2&quot;           
+##  [76] &quot;tGravityAcc.arCoeff...Z.3&quot;           
+##  [77] &quot;tGravityAcc.arCoeff...Z.4&quot;           
+##  [78] &quot;tGravityAcc.correlation...X.Y&quot;       
+##  [79] &quot;tGravityAcc.correlation...X.Z&quot;       
+##  [80] &quot;tGravityAcc.correlation...Y.Z&quot;       
+##  [81] &quot;tBodyAccJerk.mean...X&quot;               
+##  [82] &quot;tBodyAccJerk.mean...Y&quot;               
+##  [83] &quot;tBodyAccJerk.mean...Z&quot;               
+##  [84] &quot;tBodyAccJerk.std...X&quot;                
+##  [85] &quot;tBodyAccJerk.std...Y&quot;                
+##  [86] &quot;tBodyAccJerk.std...Z&quot;                
+##  [87] &quot;tBodyAccJerk.mad...X&quot;                
+##  [88] &quot;tBodyAccJerk.mad...Y&quot;                
+##  [89] &quot;tBodyAccJerk.mad...Z&quot;                
+##  [90] &quot;tBodyAccJerk.max...X&quot;                
+##  [91] &quot;tBodyAccJerk.max...Y&quot;                
+##  [92] &quot;tBodyAccJerk.max...Z&quot;                
+##  [93] &quot;tBodyAccJerk.min...X&quot;                
+##  [94] &quot;tBodyAccJerk.min...Y&quot;                
+##  [95] &quot;tBodyAccJerk.min...Z&quot;                
+##  [96] &quot;tBodyAccJerk.sma..&quot;                  
+##  [97] &quot;tBodyAccJerk.energy...X&quot;             
+##  [98] &quot;tBodyAccJerk.energy...Y&quot;             
+##  [99] &quot;tBodyAccJerk.energy...Z&quot;             
+## [100] &quot;tBodyAccJerk.iqr...X&quot;                
+## [101] &quot;tBodyAccJerk.iqr...Y&quot;                
+## [102] &quot;tBodyAccJerk.iqr...Z&quot;                
+## [103] &quot;tBodyAccJerk.entropy...X&quot;            
+## [104] &quot;tBodyAccJerk.entropy...Y&quot;            
+## [105] &quot;tBodyAccJerk.entropy...Z&quot;            
+## [106] &quot;tBodyAccJerk.arCoeff...X.1&quot;          
+## [107] &quot;tBodyAccJerk.arCoeff...X.2&quot;          
+## [108] &quot;tBodyAccJerk.arCoeff...X.3&quot;          
+## [109] &quot;tBodyAccJerk.arCoeff...X.4&quot;          
+## [110] &quot;tBodyAccJerk.arCoeff...Y.1&quot;          
+## [111] &quot;tBodyAccJerk.arCoeff...Y.2&quot;          
+## [112] &quot;tBodyAccJerk.arCoeff...Y.3&quot;          
+## [113] &quot;tBodyAccJerk.arCoeff...Y.4&quot;          
+## [114] &quot;tBodyAccJerk.arCoeff...Z.1&quot;          
+## [115] &quot;tBodyAccJerk.arCoeff...Z.2&quot;          
+## [116] &quot;tBodyAccJerk.arCoeff...Z.3&quot;          
+## [117] &quot;tBodyAccJerk.arCoeff...Z.4&quot;          
+## [118] &quot;tBodyAccJerk.correlation...X.Y&quot;      
+## [119] &quot;tBodyAccJerk.correlation...X.Z&quot;      
+## [120] &quot;tBodyAccJerk.correlation...Y.Z&quot;      
+## [121] &quot;tBodyGyro.mean...X&quot;                  
+## [122] &quot;tBodyGyro.mean...Y&quot;                  
+## [123] &quot;tBodyGyro.mean...Z&quot;                  
+## [124] &quot;tBodyGyro.std...X&quot;                   
+## [125] &quot;tBodyGyro.std...Y&quot;                   
+## [126] &quot;tBodyGyro.std...Z&quot;                   
+## [127] &quot;tBodyGyro.mad...X&quot;                   
+## [128] &quot;tBodyGyro.mad...Y&quot;                   
+## [129] &quot;tBodyGyro.mad...Z&quot;                   
+## [130] &quot;tBodyGyro.max...X&quot;                   
+## [131] &quot;tBodyGyro.max...Y&quot;                   
+## [132] &quot;tBodyGyro.max...Z&quot;                   
+## [133] &quot;tBodyGyro.min...X&quot;                   
+## [134] &quot;tBodyGyro.min...Y&quot;                   
+## [135] &quot;tBodyGyro.min...Z&quot;                   
+## [136] &quot;tBodyGyro.sma..&quot;                     
+## [137] &quot;tBodyGyro.energy...X&quot;                
+## [138] &quot;tBodyGyro.energy...Y&quot;                
+## [139] &quot;tBodyGyro.energy...Z&quot;                
+## [140] &quot;tBodyGyro.iqr...X&quot;                   
+## [141] &quot;tBodyGyro.iqr...Y&quot;                   
+## [142] &quot;tBodyGyro.iqr...Z&quot;                   
+## [143] &quot;tBodyGyro.entropy...X&quot;               
+## [144] &quot;tBodyGyro.entropy...Y&quot;               
+## [145] &quot;tBodyGyro.entropy...Z&quot;               
+## [146] &quot;tBodyGyro.arCoeff...X.1&quot;             
+## [147] &quot;tBodyGyro.arCoeff...X.2&quot;             
+## [148] &quot;tBodyGyro.arCoeff...X.3&quot;             
+## [149] &quot;tBodyGyro.arCoeff...X.4&quot;             
+## [150] &quot;tBodyGyro.arCoeff...Y.1&quot;             
+## [151] &quot;tBodyGyro.arCoeff...Y.2&quot;             
+## [152] &quot;tBodyGyro.arCoeff...Y.3&quot;             
+## [153] &quot;tBodyGyro.arCoeff...Y.4&quot;             
+## [154] &quot;tBodyGyro.arCoeff...Z.1&quot;             
+## [155] &quot;tBodyGyro.arCoeff...Z.2&quot;             
+## [156] &quot;tBodyGyro.arCoeff...Z.3&quot;             
+## [157] &quot;tBodyGyro.arCoeff...Z.4&quot;             
+## [158] &quot;tBodyGyro.correlation...X.Y&quot;         
+## [159] &quot;tBodyGyro.correlation...X.Z&quot;         
+## [160] &quot;tBodyGyro.correlation...Y.Z&quot;         
+## [161] &quot;tBodyGyroJerk.mean...X&quot;              
+## [162] &quot;tBodyGyroJerk.mean...Y&quot;              
+## [163] &quot;tBodyGyroJerk.mean...Z&quot;              
+## [164] &quot;tBodyGyroJerk.std...X&quot;               
+## [165] &quot;tBodyGyroJerk.std...Y&quot;               
+## [166] &quot;tBodyGyroJerk.std...Z&quot;               
+## [167] &quot;tBodyGyroJerk.mad...X&quot;               
+## [168] &quot;tBodyGyroJerk.mad...Y&quot;               
+## [169] &quot;tBodyGyroJerk.mad...Z&quot;               
+## [170] &quot;tBodyGyroJerk.max...X&quot;               
+## [171] &quot;tBodyGyroJerk.max...Y&quot;               
+## [172] &quot;tBodyGyroJerk.max...Z&quot;               
+## [173] &quot;tBodyGyroJerk.min...X&quot;               
+## [174] &quot;tBodyGyroJerk.min...Y&quot;               
+## [175] &quot;tBodyGyroJerk.min...Z&quot;               
+## [176] &quot;tBodyGyroJerk.sma..&quot;                 
+## [177] &quot;tBodyGyroJerk.energy...X&quot;            
+## [178] &quot;tBodyGyroJerk.energy...Y&quot;            
+## [179] &quot;tBodyGyroJerk.energy...Z&quot;            
+## [180] &quot;tBodyGyroJerk.iqr...X&quot;               
+## [181] &quot;tBodyGyroJerk.iqr...Y&quot;               
+## [182] &quot;tBodyGyroJerk.iqr...Z&quot;               
+## [183] &quot;tBodyGyroJerk.entropy...X&quot;           
+## [184] &quot;tBodyGyroJerk.entropy...Y&quot;           
+## [185] &quot;tBodyGyroJerk.entropy...Z&quot;           
+## [186] &quot;tBodyGyroJerk.arCoeff...X.1&quot;         
+## [187] &quot;tBodyGyroJerk.arCoeff...X.2&quot;         
+## [188] &quot;tBodyGyroJerk.arCoeff...X.3&quot;         
+## [189] &quot;tBodyGyroJerk.arCoeff...X.4&quot;         
+## [190] &quot;tBodyGyroJerk.arCoeff...Y.1&quot;         
+## [191] &quot;tBodyGyroJerk.arCoeff...Y.2&quot;         
+## [192] &quot;tBodyGyroJerk.arCoeff...Y.3&quot;         
+## [193] &quot;tBodyGyroJerk.arCoeff...Y.4&quot;         
+## [194] &quot;tBodyGyroJerk.arCoeff...Z.1&quot;         
+## [195] &quot;tBodyGyroJerk.arCoeff...Z.2&quot;         
+## [196] &quot;tBodyGyroJerk.arCoeff...Z.3&quot;         
+## [197] &quot;tBodyGyroJerk.arCoeff...Z.4&quot;         
+## [198] &quot;tBodyGyroJerk.correlation...X.Y&quot;     
+## [199] &quot;tBodyGyroJerk.correlation...X.Z&quot;     
+## [200] &quot;tBodyGyroJerk.correlation...Y.Z&quot;     
+## [201] &quot;tBodyAccMag.mean..&quot;                  
+## [202] &quot;tBodyAccMag.std..&quot;                   
+## [203] &quot;tBodyAccMag.mad..&quot;                   
+## [204] &quot;tBodyAccMag.max..&quot;                   
+## [205] &quot;tBodyAccMag.min..&quot;                   
+## [206] &quot;tBodyAccMag.sma..&quot;                   
+## [207] &quot;tBodyAccMag.energy..&quot;                
+## [208] &quot;tBodyAccMag.iqr..&quot;                   
+## [209] &quot;tBodyAccMag.entropy..&quot;               
+## [210] &quot;tBodyAccMag.arCoeff..1&quot;              
+## [211] &quot;tBodyAccMag.arCoeff..2&quot;              
+## [212] &quot;tBodyAccMag.arCoeff..3&quot;              
+## [213] &quot;tBodyAccMag.arCoeff..4&quot;              
+## [214] &quot;tGravityAccMag.mean..&quot;               
+## [215] &quot;tGravityAccMag.std..&quot;                
+## [216] &quot;tGravityAccMag.mad..&quot;                
+## [217] &quot;tGravityAccMag.max..&quot;                
+## [218] &quot;tGravityAccMag.min..&quot;                
+## [219] &quot;tGravityAccMag.sma..&quot;                
+## [220] &quot;tGravityAccMag.energy..&quot;             
+## [221] &quot;tGravityAccMag.iqr..&quot;                
+## [222] &quot;tGravityAccMag.entropy..&quot;            
+## [223] &quot;tGravityAccMag.arCoeff..1&quot;           
+## [224] &quot;tGravityAccMag.arCoeff..2&quot;           
+## [225] &quot;tGravityAccMag.arCoeff..3&quot;           
+## [226] &quot;tGravityAccMag.arCoeff..4&quot;           
+## [227] &quot;tBodyAccJerkMag.mean..&quot;              
+## [228] &quot;tBodyAccJerkMag.std..&quot;               
+## [229] &quot;tBodyAccJerkMag.mad..&quot;               
+## [230] &quot;tBodyAccJerkMag.max..&quot;               
+## [231] &quot;tBodyAccJerkMag.min..&quot;               
+## [232] &quot;tBodyAccJerkMag.sma..&quot;               
+## [233] &quot;tBodyAccJerkMag.energy..&quot;            
+## [234] &quot;tBodyAccJerkMag.iqr..&quot;               
+## [235] &quot;tBodyAccJerkMag.entropy..&quot;           
+## [236] &quot;tBodyAccJerkMag.arCoeff..1&quot;          
+## [237] &quot;tBodyAccJerkMag.arCoeff..2&quot;          
+## [238] &quot;tBodyAccJerkMag.arCoeff..3&quot;          
+## [239] &quot;tBodyAccJerkMag.arCoeff..4&quot;          
+## [240] &quot;tBodyGyroMag.mean..&quot;                 
+## [241] &quot;tBodyGyroMag.std..&quot;                  
+## [242] &quot;tBodyGyroMag.mad..&quot;                  
+## [243] &quot;tBodyGyroMag.max..&quot;                  
+## [244] &quot;tBodyGyroMag.min..&quot;                  
+## [245] &quot;tBodyGyroMag.sma..&quot;                  
+## [246] &quot;tBodyGyroMag.energy..&quot;               
+## [247] &quot;tBodyGyroMag.iqr..&quot;                  
+## [248] &quot;tBodyGyroMag.entropy..&quot;              
+## [249] &quot;tBodyGyroMag.arCoeff..1&quot;             
+## [250] &quot;tBodyGyroMag.arCoeff..2&quot;             
+## [251] &quot;tBodyGyroMag.arCoeff..3&quot;             
+## [252] &quot;tBodyGyroMag.arCoeff..4&quot;             
+## [253] &quot;tBodyGyroJerkMag.mean..&quot;             
+## [254] &quot;tBodyGyroJerkMag.std..&quot;              
+## [255] &quot;tBodyGyroJerkMag.mad..&quot;              
+## [256] &quot;tBodyGyroJerkMag.max..&quot;              
+## [257] &quot;tBodyGyroJerkMag.min..&quot;              
+## [258] &quot;tBodyGyroJerkMag.sma..&quot;              
+## [259] &quot;tBodyGyroJerkMag.energy..&quot;           
+## [260] &quot;tBodyGyroJerkMag.iqr..&quot;              
+## [261] &quot;tBodyGyroJerkMag.entropy..&quot;          
+## [262] &quot;tBodyGyroJerkMag.arCoeff..1&quot;         
+## [263] &quot;tBodyGyroJerkMag.arCoeff..2&quot;         
+## [264] &quot;tBodyGyroJerkMag.arCoeff..3&quot;         
+## [265] &quot;tBodyGyroJerkMag.arCoeff..4&quot;         
+## [266] &quot;fBodyAcc.mean...X&quot;                   
+## [267] &quot;fBodyAcc.mean...Y&quot;                   
+## [268] &quot;fBodyAcc.mean...Z&quot;                   
+## [269] &quot;fBodyAcc.std...X&quot;                    
+## [270] &quot;fBodyAcc.std...Y&quot;                    
+## [271] &quot;fBodyAcc.std...Z&quot;                    
+## [272] &quot;fBodyAcc.mad...X&quot;                    
+## [273] &quot;fBodyAcc.mad...Y&quot;                    
+## [274] &quot;fBodyAcc.mad...Z&quot;                    
+## [275] &quot;fBodyAcc.max...X&quot;                    
+## [276] &quot;fBodyAcc.max...Y&quot;                    
+## [277] &quot;fBodyAcc.max...Z&quot;                    
+## [278] &quot;fBodyAcc.min...X&quot;                    
+## [279] &quot;fBodyAcc.min...Y&quot;                    
+## [280] &quot;fBodyAcc.min...Z&quot;                    
+## [281] &quot;fBodyAcc.sma..&quot;                      
+## [282] &quot;fBodyAcc.energy...X&quot;                 
+## [283] &quot;fBodyAcc.energy...Y&quot;                 
+## [284] &quot;fBodyAcc.energy...Z&quot;                 
+## [285] &quot;fBodyAcc.iqr...X&quot;                    
+## [286] &quot;fBodyAcc.iqr...Y&quot;                    
+## [287] &quot;fBodyAcc.iqr...Z&quot;                    
+## [288] &quot;fBodyAcc.entropy...X&quot;                
+## [289] &quot;fBodyAcc.entropy...Y&quot;                
+## [290] &quot;fBodyAcc.entropy...Z&quot;                
+## [291] &quot;fBodyAcc.maxInds.X&quot;                  
+## [292] &quot;fBodyAcc.maxInds.Y&quot;                  
+## [293] &quot;fBodyAcc.maxInds.Z&quot;                  
+## [294] &quot;fBodyAcc.meanFreq...X&quot;               
+## [295] &quot;fBodyAcc.meanFreq...Y&quot;               
+## [296] &quot;fBodyAcc.meanFreq...Z&quot;               
+## [297] &quot;fBodyAcc.skewness...X&quot;               
+## [298] &quot;fBodyAcc.kurtosis...X&quot;               
+## [299] &quot;fBodyAcc.skewness...Y&quot;               
+## [300] &quot;fBodyAcc.kurtosis...Y&quot;               
+## [301] &quot;fBodyAcc.skewness...Z&quot;               
+## [302] &quot;fBodyAcc.kurtosis...Z&quot;               
+## [303] &quot;fBodyAcc.bandsEnergy...1.8&quot;          
+## [304] &quot;fBodyAcc.bandsEnergy...9.16&quot;         
+## [305] &quot;fBodyAcc.bandsEnergy...17.24&quot;        
+## [306] &quot;fBodyAcc.bandsEnergy...25.32&quot;        
+## [307] &quot;fBodyAcc.bandsEnergy...33.40&quot;        
+## [308] &quot;fBodyAcc.bandsEnergy...41.48&quot;        
+## [309] &quot;fBodyAcc.bandsEnergy...49.56&quot;        
+## [310] &quot;fBodyAcc.bandsEnergy...57.64&quot;        
+## [311] &quot;fBodyAcc.bandsEnergy...1.16&quot;         
+## [312] &quot;fBodyAcc.bandsEnergy...17.32&quot;        
+## [313] &quot;fBodyAcc.bandsEnergy...33.48&quot;        
+## [314] &quot;fBodyAcc.bandsEnergy...49.64&quot;        
+## [315] &quot;fBodyAcc.bandsEnergy...1.24&quot;         
+## [316] &quot;fBodyAcc.bandsEnergy...25.48&quot;        
+## [317] &quot;fBodyAcc.bandsEnergy...1.8.1&quot;        
+## [318] &quot;fBodyAcc.bandsEnergy...9.16.1&quot;       
+## [319] &quot;fBodyAcc.bandsEnergy...17.24.1&quot;      
+## [320] &quot;fBodyAcc.bandsEnergy...25.32.1&quot;      
+## [321] &quot;fBodyAcc.bandsEnergy...33.40.1&quot;      
+## [322] &quot;fBodyAcc.bandsEnergy...41.48.1&quot;      
+## [323] &quot;fBodyAcc.bandsEnergy...49.56.1&quot;      
+## [324] &quot;fBodyAcc.bandsEnergy...57.64.1&quot;      
+## [325] &quot;fBodyAcc.bandsEnergy...1.16.1&quot;       
+## [326] &quot;fBodyAcc.bandsEnergy...17.32.1&quot;      
+## [327] &quot;fBodyAcc.bandsEnergy...33.48.1&quot;      
+## [328] &quot;fBodyAcc.bandsEnergy...49.64.1&quot;      
+## [329] &quot;fBodyAcc.bandsEnergy...1.24.1&quot;       
+## [330] &quot;fBodyAcc.bandsEnergy...25.48.1&quot;      
+## [331] &quot;fBodyAcc.bandsEnergy...1.8.2&quot;        
+## [332] &quot;fBodyAcc.bandsEnergy...9.16.2&quot;       
+## [333] &quot;fBodyAcc.bandsEnergy...17.24.2&quot;      
+## [334] &quot;fBodyAcc.bandsEnergy...25.32.2&quot;      
+## [335] &quot;fBodyAcc.bandsEnergy...33.40.2&quot;      
+## [336] &quot;fBodyAcc.bandsEnergy...41.48.2&quot;      
+## [337] &quot;fBodyAcc.bandsEnergy...49.56.2&quot;      
+## [338] &quot;fBodyAcc.bandsEnergy...57.64.2&quot;      
+## [339] &quot;fBodyAcc.bandsEnergy...1.16.2&quot;       
+## [340] &quot;fBodyAcc.bandsEnergy...17.32.2&quot;      
+## [341] &quot;fBodyAcc.bandsEnergy...33.48.2&quot;      
+## [342] &quot;fBodyAcc.bandsEnergy...49.64.2&quot;      
+## [343] &quot;fBodyAcc.bandsEnergy...1.24.2&quot;       
+## [344] &quot;fBodyAcc.bandsEnergy...25.48.2&quot;      
+## [345] &quot;fBodyAccJerk.mean...X&quot;               
+## [346] &quot;fBodyAccJerk.mean...Y&quot;               
+## [347] &quot;fBodyAccJerk.mean...Z&quot;               
+## [348] &quot;fBodyAccJerk.std...X&quot;                
+## [349] &quot;fBodyAccJerk.std...Y&quot;                
+## [350] &quot;fBodyAccJerk.std...Z&quot;                
+## [351] &quot;fBodyAccJerk.mad...X&quot;                
+## [352] &quot;fBodyAccJerk.mad...Y&quot;                
+## [353] &quot;fBodyAccJerk.mad...Z&quot;                
+## [354] &quot;fBodyAccJerk.max...X&quot;                
+## [355] &quot;fBodyAccJerk.max...Y&quot;                
+## [356] &quot;fBodyAccJerk.max...Z&quot;                
+## [357] &quot;fBodyAccJerk.min...X&quot;                
+## [358] &quot;fBodyAccJerk.min...Y&quot;                
+## [359] &quot;fBodyAccJerk.min...Z&quot;                
+## [360] &quot;fBodyAccJerk.sma..&quot;                  
+## [361] &quot;fBodyAccJerk.energy...X&quot;             
+## [362] &quot;fBodyAccJerk.energy...Y&quot;             
+## [363] &quot;fBodyAccJerk.energy...Z&quot;             
+## [364] &quot;fBodyAccJerk.iqr...X&quot;                
+## [365] &quot;fBodyAccJerk.iqr...Y&quot;                
+## [366] &quot;fBodyAccJerk.iqr...Z&quot;                
+## [367] &quot;fBodyAccJerk.entropy...X&quot;            
+## [368] &quot;fBodyAccJerk.entropy...Y&quot;            
+## [369] &quot;fBodyAccJerk.entropy...Z&quot;            
+## [370] &quot;fBodyAccJerk.maxInds.X&quot;              
+## [371] &quot;fBodyAccJerk.maxInds.Y&quot;              
+## [372] &quot;fBodyAccJerk.maxInds.Z&quot;              
+## [373] &quot;fBodyAccJerk.meanFreq...X&quot;           
+## [374] &quot;fBodyAccJerk.meanFreq...Y&quot;           
+## [375] &quot;fBodyAccJerk.meanFreq...Z&quot;           
+## [376] &quot;fBodyAccJerk.skewness...X&quot;           
+## [377] &quot;fBodyAccJerk.kurtosis...X&quot;           
+## [378] &quot;fBodyAccJerk.skewness...Y&quot;           
+## [379] &quot;fBodyAccJerk.kurtosis...Y&quot;           
+## [380] &quot;fBodyAccJerk.skewness...Z&quot;           
+## [381] &quot;fBodyAccJerk.kurtosis...Z&quot;           
+## [382] &quot;fBodyAccJerk.bandsEnergy...1.8&quot;      
+## [383] &quot;fBodyAccJerk.bandsEnergy...9.16&quot;     
+## [384] &quot;fBodyAccJerk.bandsEnergy...17.24&quot;    
+## [385] &quot;fBodyAccJerk.bandsEnergy...25.32&quot;    
+## [386] &quot;fBodyAccJerk.bandsEnergy...33.40&quot;    
+## [387] &quot;fBodyAccJerk.bandsEnergy...41.48&quot;    
+## [388] &quot;fBodyAccJerk.bandsEnergy...49.56&quot;    
+## [389] &quot;fBodyAccJerk.bandsEnergy...57.64&quot;    
+## [390] &quot;fBodyAccJerk.bandsEnergy...1.16&quot;     
+## [391] &quot;fBodyAccJerk.bandsEnergy...17.32&quot;    
+## [392] &quot;fBodyAccJerk.bandsEnergy...33.48&quot;    
+## [393] &quot;fBodyAccJerk.bandsEnergy...49.64&quot;    
+## [394] &quot;fBodyAccJerk.bandsEnergy...1.24&quot;     
+## [395] &quot;fBodyAccJerk.bandsEnergy...25.48&quot;    
+## [396] &quot;fBodyAccJerk.bandsEnergy...1.8.1&quot;    
+## [397] &quot;fBodyAccJerk.bandsEnergy...9.16.1&quot;   
+## [398] &quot;fBodyAccJerk.bandsEnergy...17.24.1&quot;  
+## [399] &quot;fBodyAccJerk.bandsEnergy...25.32.1&quot;  
+## [400] &quot;fBodyAccJerk.bandsEnergy...33.40.1&quot;  
+## [401] &quot;fBodyAccJerk.bandsEnergy...41.48.1&quot;  
+## [402] &quot;fBodyAccJerk.bandsEnergy...49.56.1&quot;  
+## [403] &quot;fBodyAccJerk.bandsEnergy...57.64.1&quot;  
+## [404] &quot;fBodyAccJerk.bandsEnergy...1.16.1&quot;   
+## [405] &quot;fBodyAccJerk.bandsEnergy...17.32.1&quot;  
+## [406] &quot;fBodyAccJerk.bandsEnergy...33.48.1&quot;  
+## [407] &quot;fBodyAccJerk.bandsEnergy...49.64.1&quot;  
+## [408] &quot;fBodyAccJerk.bandsEnergy...1.24.1&quot;   
+## [409] &quot;fBodyAccJerk.bandsEnergy...25.48.1&quot;  
+## [410] &quot;fBodyAccJerk.bandsEnergy...1.8.2&quot;    
+## [411] &quot;fBodyAccJerk.bandsEnergy...9.16.2&quot;   
+## [412] &quot;fBodyAccJerk.bandsEnergy...17.24.2&quot;  
+## [413] &quot;fBodyAccJerk.bandsEnergy...25.32.2&quot;  
+## [414] &quot;fBodyAccJerk.bandsEnergy...33.40.2&quot;  
+## [415] &quot;fBodyAccJerk.bandsEnergy...41.48.2&quot;  
+## [416] &quot;fBodyAccJerk.bandsEnergy...49.56.2&quot;  
+## [417] &quot;fBodyAccJerk.bandsEnergy...57.64.2&quot;  
+## [418] &quot;fBodyAccJerk.bandsEnergy...1.16.2&quot;   
+## [419] &quot;fBodyAccJerk.bandsEnergy...17.32.2&quot;  
+## [420] &quot;fBodyAccJerk.bandsEnergy...33.48.2&quot;  
+## [421] &quot;fBodyAccJerk.bandsEnergy...49.64.2&quot;  
+## [422] &quot;fBodyAccJerk.bandsEnergy...1.24.2&quot;   
+## [423] &quot;fBodyAccJerk.bandsEnergy...25.48.2&quot;  
+## [424] &quot;fBodyGyro.mean...X&quot;                  
+## [425] &quot;fBodyGyro.mean...Y&quot;                  
+## [426] &quot;fBodyGyro.mean...Z&quot;                  
+## [427] &quot;fBodyGyro.std...X&quot;                   
+## [428] &quot;fBodyGyro.std...Y&quot;                   
+## [429] &quot;fBodyGyro.std...Z&quot;                   
+## [430] &quot;fBodyGyro.mad...X&quot;                   
+## [431] &quot;fBodyGyro.mad...Y&quot;                   
+## [432] &quot;fBodyGyro.mad...Z&quot;                   
+## [433] &quot;fBodyGyro.max...X&quot;                   
+## [434] &quot;fBodyGyro.max...Y&quot;                   
+## [435] &quot;fBodyGyro.max...Z&quot;                   
+## [436] &quot;fBodyGyro.min...X&quot;                   
+## [437] &quot;fBodyGyro.min...Y&quot;                   
+## [438] &quot;fBodyGyro.min...Z&quot;                   
+## [439] &quot;fBodyGyro.sma..&quot;                     
+## [440] &quot;fBodyGyro.energy...X&quot;                
+## [441] &quot;fBodyGyro.energy...Y&quot;                
+## [442] &quot;fBodyGyro.energy...Z&quot;                
+## [443] &quot;fBodyGyro.iqr...X&quot;                   
+## [444] &quot;fBodyGyro.iqr...Y&quot;                   
+## [445] &quot;fBodyGyro.iqr...Z&quot;                   
+## [446] &quot;fBodyGyro.entropy...X&quot;               
+## [447] &quot;fBodyGyro.entropy...Y&quot;               
+## [448] &quot;fBodyGyro.entropy...Z&quot;               
+## [449] &quot;fBodyGyro.maxInds.X&quot;                 
+## [450] &quot;fBodyGyro.maxInds.Y&quot;                 
+## [451] &quot;fBodyGyro.maxInds.Z&quot;                 
+## [452] &quot;fBodyGyro.meanFreq...X&quot;              
+## [453] &quot;fBodyGyro.meanFreq...Y&quot;              
+## [454] &quot;fBodyGyro.meanFreq...Z&quot;              
+## [455] &quot;fBodyGyro.skewness...X&quot;              
+## [456] &quot;fBodyGyro.kurtosis...X&quot;              
+## [457] &quot;fBodyGyro.skewness...Y&quot;              
+## [458] &quot;fBodyGyro.kurtosis...Y&quot;              
+## [459] &quot;fBodyGyro.skewness...Z&quot;              
+## [460] &quot;fBodyGyro.kurtosis...Z&quot;              
+## [461] &quot;fBodyGyro.bandsEnergy...1.8&quot;         
+## [462] &quot;fBodyGyro.bandsEnergy...9.16&quot;        
+## [463] &quot;fBodyGyro.bandsEnergy...17.24&quot;       
+## [464] &quot;fBodyGyro.bandsEnergy...25.32&quot;       
+## [465] &quot;fBodyGyro.bandsEnergy...33.40&quot;       
+## [466] &quot;fBodyGyro.bandsEnergy...41.48&quot;       
+## [467] &quot;fBodyGyro.bandsEnergy...49.56&quot;       
+## [468] &quot;fBodyGyro.bandsEnergy...57.64&quot;       
+## [469] &quot;fBodyGyro.bandsEnergy...1.16&quot;        
+## [470] &quot;fBodyGyro.bandsEnergy...17.32&quot;       
+## [471] &quot;fBodyGyro.bandsEnergy...33.48&quot;       
+## [472] &quot;fBodyGyro.bandsEnergy...49.64&quot;       
+## [473] &quot;fBodyGyro.bandsEnergy...1.24&quot;        
+## [474] &quot;fBodyGyro.bandsEnergy...25.48&quot;       
+## [475] &quot;fBodyGyro.bandsEnergy...1.8.1&quot;       
+## [476] &quot;fBodyGyro.bandsEnergy...9.16.1&quot;      
+## [477] &quot;fBodyGyro.bandsEnergy...17.24.1&quot;     
+## [478] &quot;fBodyGyro.bandsEnergy...25.32.1&quot;     
+## [479] &quot;fBodyGyro.bandsEnergy...33.40.1&quot;     
+## [480] &quot;fBodyGyro.bandsEnergy...41.48.1&quot;     
+## [481] &quot;fBodyGyro.bandsEnergy...49.56.1&quot;     
+## [482] &quot;fBodyGyro.bandsEnergy...57.64.1&quot;     
+## [483] &quot;fBodyGyro.bandsEnergy...1.16.1&quot;      
+## [484] &quot;fBodyGyro.bandsEnergy...17.32.1&quot;     
+## [485] &quot;fBodyGyro.bandsEnergy...33.48.1&quot;     
+## [486] &quot;fBodyGyro.bandsEnergy...49.64.1&quot;     
+## [487] &quot;fBodyGyro.bandsEnergy...1.24.1&quot;      
+## [488] &quot;fBodyGyro.bandsEnergy...25.48.1&quot;     
+## [489] &quot;fBodyGyro.bandsEnergy...1.8.2&quot;       
+## [490] &quot;fBodyGyro.bandsEnergy...9.16.2&quot;      
+## [491] &quot;fBodyGyro.bandsEnergy...17.24.2&quot;     
+## [492] &quot;fBodyGyro.bandsEnergy...25.32.2&quot;     
+## [493] &quot;fBodyGyro.bandsEnergy...33.40.2&quot;     
+## [494] &quot;fBodyGyro.bandsEnergy...41.48.2&quot;     
+## [495] &quot;fBodyGyro.bandsEnergy...49.56.2&quot;     
+## [496] &quot;fBodyGyro.bandsEnergy...57.64.2&quot;     
+## [497] &quot;fBodyGyro.bandsEnergy...1.16.2&quot;      
+## [498] &quot;fBodyGyro.bandsEnergy...17.32.2&quot;     
+## [499] &quot;fBodyGyro.bandsEnergy...33.48.2&quot;     
+## [500] &quot;fBodyGyro.bandsEnergy...49.64.2&quot;     
+## [501] &quot;fBodyGyro.bandsEnergy...1.24.2&quot;      
+## [502] &quot;fBodyGyro.bandsEnergy...25.48.2&quot;     
+## [503] &quot;fBodyAccMag.mean..&quot;                  
+## [504] &quot;fBodyAccMag.std..&quot;                   
+## [505] &quot;fBodyAccMag.mad..&quot;                   
+## [506] &quot;fBodyAccMag.max..&quot;                   
+## [507] &quot;fBodyAccMag.min..&quot;                   
+## [508] &quot;fBodyAccMag.sma..&quot;                   
+## [509] &quot;fBodyAccMag.energy..&quot;                
+## [510] &quot;fBodyAccMag.iqr..&quot;                   
+## [511] &quot;fBodyAccMag.entropy..&quot;               
+## [512] &quot;fBodyAccMag.maxInds&quot;                 
+## [513] &quot;fBodyAccMag.meanFreq..&quot;              
+## [514] &quot;fBodyAccMag.skewness..&quot;              
+## [515] &quot;fBodyAccMag.kurtosis..&quot;              
+## [516] &quot;fBodyBodyAccJerkMag.mean..&quot;          
+## [517] &quot;fBodyBodyAccJerkMag.std..&quot;           
+## [518] &quot;fBodyBodyAccJerkMag.mad..&quot;           
+## [519] &quot;fBodyBodyAccJerkMag.max..&quot;           
+## [520] &quot;fBodyBodyAccJerkMag.min..&quot;           
+## [521] &quot;fBodyBodyAccJerkMag.sma..&quot;           
+## [522] &quot;fBodyBodyAccJerkMag.energy..&quot;        
+## [523] &quot;fBodyBodyAccJerkMag.iqr..&quot;           
+## [524] &quot;fBodyBodyAccJerkMag.entropy..&quot;       
+## [525] &quot;fBodyBodyAccJerkMag.maxInds&quot;         
+## [526] &quot;fBodyBodyAccJerkMag.meanFreq..&quot;      
+## [527] &quot;fBodyBodyAccJerkMag.skewness..&quot;      
+## [528] &quot;fBodyBodyAccJerkMag.kurtosis..&quot;      
+## [529] &quot;fBodyBodyGyroMag.mean..&quot;             
+## [530] &quot;fBodyBodyGyroMag.std..&quot;              
+## [531] &quot;fBodyBodyGyroMag.mad..&quot;              
+## [532] &quot;fBodyBodyGyroMag.max..&quot;              
+## [533] &quot;fBodyBodyGyroMag.min..&quot;              
+## [534] &quot;fBodyBodyGyroMag.sma..&quot;              
+## [535] &quot;fBodyBodyGyroMag.energy..&quot;           
+## [536] &quot;fBodyBodyGyroMag.iqr..&quot;              
+## [537] &quot;fBodyBodyGyroMag.entropy..&quot;          
+## [538] &quot;fBodyBodyGyroMag.maxInds&quot;            
+## [539] &quot;fBodyBodyGyroMag.meanFreq..&quot;         
+## [540] &quot;fBodyBodyGyroMag.skewness..&quot;         
+## [541] &quot;fBodyBodyGyroMag.kurtosis..&quot;         
+## [542] &quot;fBodyBodyGyroJerkMag.mean..&quot;         
+## [543] &quot;fBodyBodyGyroJerkMag.std..&quot;          
+## [544] &quot;fBodyBodyGyroJerkMag.mad..&quot;          
+## [545] &quot;fBodyBodyGyroJerkMag.max..&quot;          
+## [546] &quot;fBodyBodyGyroJerkMag.min..&quot;          
+## [547] &quot;fBodyBodyGyroJerkMag.sma..&quot;          
+## [548] &quot;fBodyBodyGyroJerkMag.energy..&quot;       
+## [549] &quot;fBodyBodyGyroJerkMag.iqr..&quot;          
+## [550] &quot;fBodyBodyGyroJerkMag.entropy..&quot;      
+## [551] &quot;fBodyBodyGyroJerkMag.maxInds&quot;        
+## [552] &quot;fBodyBodyGyroJerkMag.meanFreq..&quot;     
+## [553] &quot;fBodyBodyGyroJerkMag.skewness..&quot;     
+## [554] &quot;fBodyBodyGyroJerkMag.kurtosis..&quot;     
+## [555] &quot;angle.tBodyAccMean.gravity.&quot;         
+## [556] &quot;angle.tBodyAccJerkMean..gravityMean.&quot;
+## [557] &quot;angle.tBodyGyroMean.gravityMean.&quot;    
+## [558] &quot;angle.tBodyGyroJerkMean.gravityMean.&quot;
+## [559] &quot;angle.X.gravityMean.&quot;                
+## [560] &quot;angle.Y.gravityMean.&quot;                
+## [561] &quot;angle.Z.gravityMean.&quot;                
+## [562] &quot;subject&quot;                             
+## [563] &quot;activity&quot;
+</code></pre>
+
+<h3>make Training, Validation,and Test sets</h3>
+
+<p>Training and test sets include the require subjects as noted.
+training set size has 13 subjects.
+validation set and test set sizes are 4 subjects each.</p>
+
+<pre><code class="r">subjects.rest &lt;- c(7, 8, 11, 14, 15, 16, 17, 19, 21, 22, 23, 25, 26)
+set.seed(47033)
+train1 &lt;- sample(subjects.rest, 9, replace = FALSE)
+train1 &lt;- c(train1, c(1, 3, 5, 6))
+test1 &lt;- c(27, 28, 29, 30)
+notvalid &lt;- c(train1, test1)
+# trainSet &lt;- samsungData[samsungData$subject == c(1,3,5,6),]
+trainSet &lt;- samsungData[samsungData$subject %in% train1, ]
+validateSet &lt;- samsungData[!(samsungData$subject %in% notvalid), ]
+testSet &lt;- samsungData[samsungData$subject %in% test1, ]
+table(trainSet$subject)
+</code></pre>
+
+<pre><code>## 
+##   1   3   5   6   7   8  14  16  17  19  21  23  25 
+## 347 341 302 325 308 281 323 366 368 360 408 372 409
+</code></pre>
+
+<pre><code class="r">table(validateSet$subject)
+</code></pre>
+
+<pre><code>## 
+##  11  15  22  26 
+## 316 328 321 392
+</code></pre>
+
+<pre><code class="r">table(testSet$subject)
+</code></pre>
+
+<pre><code>## 
+##  27  28  29  30 
+## 376 382 344 383
+</code></pre>
+
+<h2>Pick Function</h2>
+
+<h3>use a tree first</h3>
+
+<pre><code class="r">library(tree)
+train.tree &lt;- tree(factor(activity) ~ ., data = trainSet)
+par(mfrow = c(1, 1))
+plot(train.tree)
+text(train.tree, cex = 0.5)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAABLFBMVEX9/v0AAAAAAA4AACoAAEYAAFQAFRUAKlQAKn8AKxwAVX8AVakcAAAqAAAqAFQqHBwqKgAqKioqKlQqKn8qR38qVSoqVX8qVakqf6kqf7Aqf9NAR39UAABUAFRUKlRUKn9UVQBUVSpUVVRUVX9Uf39Uf6lUqalUqdNUqf1VFSpqKwBx/v1/KgB/Kip/KlR/VQB/VSp/VVR/VX9/fyp/f1R/f39/f6l/f9N/qX9/qal/qf1/1NN/1P2NQBWNVQCNakCNfyqN/v2pVQCpVSOpVSqpVVSpfyqpf1Spf3+pqVSpqX+pqamp1H+p/qmp/tOp/v2wQEDTfyrTf1TTf3/TqVTTqX/TqanT1H/T1KnT1P3T/qnT/tPT/v39qVT9qX/91H/91Kn9/qn9/tP9/v2w2LuzAAAAZHRSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AJoxtPQAAAAlwSFlzAAALEgAACxIB0t1+/AAAEDlJREFUeJztnQ172tYZhnvmsbIxstZdP8bWxU3c1tsSOza18RL2xSyHpLU1Qeu2Mdgx+v//YeccgYNjEyGbh/PC+9zxhQmWztHDLekSHOnVeylRyXuhF4CEgeKVQvFKoXilULxSKF4pFK8UilcKxSuF4pVC8UqheKVQvFIoXikUrxSKVwrFK4XilULxSqF4pVC8UiheKRSvFIpXCsUrheKVQvFKoXilULxSKF4pFK8UilcKxSuF4pVC8UqheKVQvFIoXikUrxSKVwrFK4XilULxSqF4pVC8UiheKRSvFIpXCsUrheKVQvFKoXilULxSKF4pFK8UilcKxSuF4pVC8UqheKVQvFIoXikUr5TFEJ9UEmNq/mm7Zx9atdFfLhr+VxSPHtLLqewsGzc1Nnjc9A+JKbkZBj/7Hky5l7ZM+dCU1kx5y5Tqpvy9qaAChWchxA8242580Gw5I+Xd051XjShOnKRy76Jhn2yVt+vWUfb30U+lG6eZSvt3a3L9dKfnW3vdbrqHZ0+qdp5+Zt+uKXbydq/zcbXing52dnvdOsWHpms9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" alt="plot of chunk unnamed-chunk-5"/> </p>
+
+<pre><code class="r">stree.predict &lt;- predict(train.tree, trainSet[, -563])
+head(tree.predict)
+</code></pre>
+
+<pre><code>## Error: object &#39;tree.predict&#39; not found
+</code></pre>
+
+<pre><code class="r">table(trainSet$activity, predict(train.tree, type = &quot;class&quot;))
+</code></pre>
+
+<pre><code>##           
+##            laying sitting standing walk walkdown walkup
+##   laying      836       0        0    0        1      0
+##   sitting       0     709       61    0        0      0
+##   standing      0     142      712    0        0      0
+##   walk          0       0        0  672       72     35
+##   walkdown      0       0        0    3      592     17
+##   walkup        0       0        1   50       44    563
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(2, 1))
+plot(cv.tree(train.tree, FUN = prune.tree, method = &quot;misclass&quot;))
+plot(cv.tree(train.tree))
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-5"/> </p>
+
+<pre><code class="r">table(validateSet$activity, predict(train.tree, validateSet[, -563], type = &quot;class&quot;))
+</code></pre>
+
+<pre><code>##           
+##            laying sitting standing walk walkdown walkup
+##   laying      277       0        0    0        0      0
+##   sitting       0     252        0    0        0      0
+##   standing      0       6      231    0        0      0
+##   walk          0       0        0  194        8     16
+##   walkdown      0       0        0    0      172      2
+##   walkup        0       0        0   19       25    155
+</code></pre>
+
+<p>Resulting tree is OK but not great. It seems to indicate an interest it gravity!</p>
+
+<h3>random Forest</h3>
+
+<pre><code class="r">library(randomForest)
+</code></pre>
+
+<pre><code>## randomForest 4.6-7
+</code></pre>
+
+<pre><code>## Type rfNews() to see new features/changes/bug fixes.
+</code></pre>
+
+<pre><code class="r">set.seed(37043)
+train.rf &lt;- randomForest(factor(activity) ~ ., data = trainSet, prox = TRUE)
+print(train.rf)
+</code></pre>
+
+<pre><code>## 
+## Call:
+##  randomForest(formula = factor(activity) ~ ., data = trainSet,      prox = TRUE) 
+##                Type of random forest: classification
+##                      Number of trees: 500
+## No. of variables tried at each split: 23
+## 
+##         OOB estimate of  error rate: 2.02%
+## Confusion matrix:
+##          laying sitting standing walk walkdown walkup class.error
+## laying      837       0        0    0        0      0    0.000000
+## sitting       0     745       24    0        0      1    0.032468
+## standing      0      39      815    0        0      0    0.045667
+## walk          0       0        0  766        8      5    0.016688
+## walkdown      0       0        0    3      606      3    0.009804
+## walkup        0       0        0    2        6    650    0.012158
+</code></pre>
+
+<pre><code class="r">importance(train.rf)
+</code></pre>
+
+<pre><code>##                                      MeanDecreaseGini
+## tBodyAcc.mean...X                              0.9904
+## tBodyAcc.mean...Y                              1.1726
+## tBodyAcc.mean...Z                              0.6323
+## tBodyAcc.std...X                              19.9399
+## tBodyAcc.std...Y                               2.0624
+## tBodyAcc.std...Z                               1.9510
+## tBodyAcc.mad...X                              18.1428
+## tBodyAcc.mad...Y                               2.0724
+## tBodyAcc.mad...Z                               2.0811
+## tBodyAcc.max...X                              36.3353
+## tBodyAcc.max...Y                               1.3978
+## tBodyAcc.max...Z                               1.3979
+## tBodyAcc.min...X                               2.6939
+## tBodyAcc.min...Y                               1.2330
+## tBodyAcc.min...Z                               1.1353
+## tBodyAcc.sma..                                 2.4998
+## tBodyAcc.energy...X                           18.4121
+## tBodyAcc.energy...Y                            2.5353
+## tBodyAcc.energy...Z                            1.8352
+## tBodyAcc.iqr...X                               4.6632
+## tBodyAcc.iqr...Y                               1.9749
+## tBodyAcc.iqr...Z                               1.6689
+## tBodyAcc.entropy...X                           2.6334
+## tBodyAcc.entropy...Y                           1.1957
+## tBodyAcc.entropy...Z                           1.3263
+## tBodyAcc.arCoeff...X.1                         1.1679
+## tBodyAcc.arCoeff...X.2                         0.7648
+## tBodyAcc.arCoeff...X.3                         0.9204
+## tBodyAcc.arCoeff...X.4                         1.3996
+## tBodyAcc.arCoeff...Y.1                         1.0153
+## tBodyAcc.arCoeff...Y.2                         0.7821
+## tBodyAcc.arCoeff...Y.3                         0.8236
+## tBodyAcc.arCoeff...Y.4                         0.8498
+## tBodyAcc.arCoeff...Z.1                         0.8160
+## tBodyAcc.arCoeff...Z.2                         0.6603
+## tBodyAcc.arCoeff...Z.3                         0.7674
+## tBodyAcc.arCoeff...Z.4                         1.2318
+## tBodyAcc.correlation...X.Y                    19.5010
+## tBodyAcc.correlation...X.Z                     5.9311
+## tBodyAcc.correlation...Y.Z                    11.3223
+## tGravityAcc.mean...X                          94.9143
+## tGravityAcc.mean...Y                          88.7320
+## tGravityAcc.mean...Z                          36.4933
+## tGravityAcc.std...X                            7.0538
+## tGravityAcc.std...Y                            3.2454
+## tGravityAcc.std...Z                            3.3840
+## tGravityAcc.mad...X                            5.3400
+## tGravityAcc.mad...Y                            4.5834
+## tGravityAcc.mad...Z                            1.7486
+## tGravityAcc.max...X                           71.5647
+## tGravityAcc.max...Y                           85.2666
+## tGravityAcc.max...Z                           42.7381
+## tGravityAcc.min...X                           89.2070
+## tGravityAcc.min...Y                           85.9245
+## tGravityAcc.min...Z                           28.4641
+## tGravityAcc.sma..                             19.7562
+## tGravityAcc.energy...X                       121.4364
+## tGravityAcc.energy...Y                        73.7145
+## tGravityAcc.energy...Z                        30.5691
+## tGravityAcc.iqr...X                            5.7279
+## tGravityAcc.iqr...Y                            1.8304
+## tGravityAcc.iqr...Z                            1.4338
+## tGravityAcc.entropy...X                       10.0681
+## tGravityAcc.entropy...Y                       26.6120
+## tGravityAcc.entropy...Z                        4.6974
+## tGravityAcc.arCoeff...X.1                     31.9407
+## tGravityAcc.arCoeff...X.2                     26.5633
+## tGravityAcc.arCoeff...X.3                     19.0119
+## tGravityAcc.arCoeff...X.4                     20.8753
+## tGravityAcc.arCoeff...Y.1                     20.7001
+## tGravityAcc.arCoeff...Y.2                     20.4852
+## tGravityAcc.arCoeff...Y.3                     19.5569
+## tGravityAcc.arCoeff...Y.4                     14.5265
+## tGravityAcc.arCoeff...Z.1                     27.4809
+## tGravityAcc.arCoeff...Z.2                     24.3179
+## tGravityAcc.arCoeff...Z.3                     17.9467
+## tGravityAcc.arCoeff...Z.4                     14.8817
+## tGravityAcc.correlation...X.Y                 10.9755
+## tGravityAcc.correlation...X.Z                  4.3606
+## tGravityAcc.correlation...Y.Z                  8.1992
+## tBodyAccJerk.mean...X                          0.8784
+## tBodyAccJerk.mean...Y                          0.6737
+## tBodyAccJerk.mean...Z                          0.5923
+## tBodyAccJerk.std...X                          25.0709
+## tBodyAccJerk.std...Y                           7.1628
+## tBodyAccJerk.std...Z                           1.2239
+## tBodyAccJerk.mad...X                          18.0024
+## tBodyAccJerk.mad...Y                          14.9650
+## tBodyAccJerk.mad...Z                           4.5279
+## tBodyAccJerk.max...X                          12.8708
+## tBodyAccJerk.max...Y                           1.0055
+## tBodyAccJerk.max...Z                           1.9046
+## tBodyAccJerk.min...X                           5.6275
+## tBodyAccJerk.min...Y                           1.1087
+## tBodyAccJerk.min...Z                           1.4042
+## tBodyAccJerk.sma..                            24.9226
+## tBodyAccJerk.energy...X                       20.6114
+## tBodyAccJerk.energy...Y                       14.0192
+## tBodyAccJerk.energy...Z                        2.3237
+## tBodyAccJerk.iqr...X                          10.3705
+## tBodyAccJerk.iqr...Y                          28.2070
+## tBodyAccJerk.iqr...Z                           8.6257
+## tBodyAccJerk.entropy...X                      12.9315
+## tBodyAccJerk.entropy...Y                      17.4155
+## tBodyAccJerk.entropy...Z                       2.9285
+## tBodyAccJerk.arCoeff...X.1                     0.9806
+## tBodyAccJerk.arCoeff...X.2                     0.6675
+## tBodyAccJerk.arCoeff...X.3                     1.1773
+## tBodyAccJerk.arCoeff...X.4                     1.1724
+## tBodyAccJerk.arCoeff...Y.1                     1.0208
+## tBodyAccJerk.arCoeff...Y.2                     0.7819
+## tBodyAccJerk.arCoeff...Y.3                     0.7267
+## tBodyAccJerk.arCoeff...Y.4                     1.6176
+## tBodyAccJerk.arCoeff...Z.1                     0.9112
+## tBodyAccJerk.arCoeff...Z.2                     0.7905
+## tBodyAccJerk.arCoeff...Z.3                     1.0154
+## tBodyAccJerk.arCoeff...Z.4                     1.5387
+## tBodyAccJerk.correlation...X.Y                 3.0132
+## tBodyAccJerk.correlation...X.Z                 2.7044
+## tBodyAccJerk.correlation...Y.Z                 2.5604
+## tBodyGyro.mean...X                             2.8419
+## tBodyGyro.mean...Y                             1.7316
+## tBodyGyro.mean...Z                             3.7107
+## tBodyGyro.std...X                              7.4680
+## tBodyGyro.std...Y                              2.0365
+## tBodyGyro.std...Z                              2.6356
+## tBodyGyro.mad...X                              6.8088
+## tBodyGyro.mad...Y                              2.1964
+## tBodyGyro.mad...Z                              3.6601
+## tBodyGyro.max...X                              8.8321
+## tBodyGyro.max...Y                              1.6295
+## tBodyGyro.max...Z                              1.5442
+## tBodyGyro.min...X                              6.9035
+## tBodyGyro.min...Y                              1.2249
+## tBodyGyro.min...Z                              2.7578
+## tBodyGyro.sma..                                1.2905
+## tBodyGyro.energy...X                           4.3350
+## tBodyGyro.energy...Y                           2.3753
+## tBodyGyro.energy...Z                           3.8239
+## tBodyGyro.iqr...X                              7.6703
+## tBodyGyro.iqr...Y                              6.1992
+## tBodyGyro.iqr...Z                              5.9085
+## tBodyGyro.entropy...X                          6.8902
+## tBodyGyro.entropy...Y                          1.7720
+## tBodyGyro.entropy...Z                          2.2092
+## tBodyGyro.arCoeff...X.1                        2.9600
+## tBodyGyro.arCoeff...X.2                        0.7530
+## tBodyGyro.arCoeff...X.3                        0.8142
+## tBodyGyro.arCoeff...X.4                        1.6668
+## tBodyGyro.arCoeff...Y.1                        2.4926
+## tBodyGyro.arCoeff...Y.2                        0.8937
+## tBodyGyro.arCoeff...Y.3                        0.8393
+## tBodyGyro.arCoeff...Y.4                        1.8056
+## tBodyGyro.arCoeff...Z.1                        0.8023
+## tBodyGyro.arCoeff...Z.2                        0.7378
+## tBodyGyro.arCoeff...Z.3                        0.8203
+## tBodyGyro.arCoeff...Z.4                        1.0126
+## tBodyGyro.correlation...X.Y                    4.4771
+## tBodyGyro.correlation...X.Z                    2.9330
+## tBodyGyro.correlation...Y.Z                    6.7065
+## tBodyGyroJerk.mean...X                         1.0964
+## tBodyGyroJerk.mean...Y                         0.5082
+## tBodyGyroJerk.mean...Z                         1.3346
+## tBodyGyroJerk.std...X                          3.9659
+## tBodyGyroJerk.std...Y                          1.3525
+## tBodyGyroJerk.std...Z                          1.5869
+## tBodyGyroJerk.mad...X                         11.2851
+## tBodyGyroJerk.mad...Y                          1.1011
+## tBodyGyroJerk.mad...Z                          6.2772
+## tBodyGyroJerk.max...X                          2.5825
+## tBodyGyroJerk.max...Y                          1.1260
+## tBodyGyroJerk.max...Z                          1.2505
+## tBodyGyroJerk.min...X                          2.8887
+## tBodyGyroJerk.min...Y                          1.4059
+## tBodyGyroJerk.min...Z                          1.5198
+## tBodyGyroJerk.sma..                            7.3391
+## tBodyGyroJerk.energy...X                       5.5013
+## tBodyGyroJerk.energy...Y                       1.4000
+## tBodyGyroJerk.energy...Z                       3.0816
+## tBodyGyroJerk.iqr...X                         17.8642
+## tBodyGyroJerk.iqr...Y                          1.1774
+## tBodyGyroJerk.iqr...Z                         17.8986
+## tBodyGyroJerk.entropy...X                      3.9042
+## tBodyGyroJerk.entropy...Y                      1.0967
+## tBodyGyroJerk.entropy...Z                      6.2260
+## tBodyGyroJerk.arCoeff...X.1                    4.6351
+## tBodyGyroJerk.arCoeff...X.2                    2.1559
+## tBodyGyroJerk.arCoeff...X.3                    3.2664
+## tBodyGyroJerk.arCoeff...X.4                    1.0314
+## tBodyGyroJerk.arCoeff...Y.1                    1.3629
+## tBodyGyroJerk.arCoeff...Y.2                    0.9224
+## tBodyGyroJerk.arCoeff...Y.3                    0.7549
+## tBodyGyroJerk.arCoeff...Y.4                    0.7991
+## tBodyGyroJerk.arCoeff...Z.1                    1.1004
+## tBodyGyroJerk.arCoeff...Z.2                    0.8963
+## tBodyGyroJerk.arCoeff...Z.3                    1.0632
+## tBodyGyroJerk.arCoeff...Z.4                    1.9724
+## tBodyGyroJerk.correlation...X.Y                4.5359
+## tBodyGyroJerk.correlation...X.Z                3.4587
+## tBodyGyroJerk.correlation...Y.Z                3.6711
+## tBodyAccMag.mean..                             2.6461
+## tBodyAccMag.std..                             29.9885
+## tBodyAccMag.mad..                             20.9002
+## tBodyAccMag.max..                             11.3300
+## tBodyAccMag.min..                              0.6656
+## tBodyAccMag.sma..                              2.6270
+## tBodyAccMag.energy..                           3.3750
+## tBodyAccMag.iqr..                              3.0046
+## tBodyAccMag.entropy..                          0.9033
+## tBodyAccMag.arCoeff..1                        16.3352
+## tBodyAccMag.arCoeff..2                         8.7470
+## tBodyAccMag.arCoeff..3                         1.0343
+## tBodyAccMag.arCoeff..4                         0.8088
+## tGravityAccMag.mean..                          4.5742
+## tGravityAccMag.std..                          24.1533
+## tGravityAccMag.mad..                          25.3043
+## tGravityAccMag.max..                           9.6836
+## tGravityAccMag.min..                           0.6260
+## tGravityAccMag.sma..                           2.8269
+## tGravityAccMag.energy..                        9.8386
+## tGravityAccMag.iqr..                           2.2327
+## tGravityAccMag.entropy..                       0.7977
+## tGravityAccMag.arCoeff..1                     15.0238
+## tGravityAccMag.arCoeff..2                      4.9431
+## tGravityAccMag.arCoeff..3                      0.9631
+## tGravityAccMag.arCoeff..4                      1.1317
+## tBodyAccJerkMag.mean..                        13.1287
+## tBodyAccJerkMag.std..                          9.7966
+## tBodyAccJerkMag.mad..                         14.9144
+## tBodyAccJerkMag.max..                          2.3884
+## tBodyAccJerkMag.min..                          0.5559
+## tBodyAccJerkMag.sma..                          8.8469
+## tBodyAccJerkMag.energy..                      11.1628
+## tBodyAccJerkMag.iqr..                         19.1939
+## tBodyAccJerkMag.entropy..                     13.5533
+## tBodyAccJerkMag.arCoeff..1                     0.9467
+## tBodyAccJerkMag.arCoeff..2                     1.0217
+## tBodyAccJerkMag.arCoeff..3                     0.9866
+## tBodyAccJerkMag.arCoeff..4                     0.7915
+## tBodyGyroMag.mean..                            1.1335
+## tBodyGyroMag.std..                             1.1103
+## tBodyGyroMag.mad..                             0.9415
+## tBodyGyroMag.max..                             0.8830
+## tBodyGyroMag.min..                             1.6474
+## tBodyGyroMag.sma..                             1.3903
+## tBodyGyroMag.energy..                          1.1461
+## tBodyGyroMag.iqr..                             1.0503
+## tBodyGyroMag.entropy..                         1.4251
+## tBodyGyroMag.arCoeff..1                        2.9498
+## tBodyGyroMag.arCoeff..2                        1.6998
+## tBodyGyroMag.arCoeff..3                        1.2873
+## tBodyGyroMag.arCoeff..4                        1.3052
+## tBodyGyroJerkMag.mean..                        8.6352
+## tBodyGyroJerkMag.std..                         1.1354
+## tBodyGyroJerkMag.mad..                         1.3923
+## tBodyGyroJerkMag.max..                         0.6690
+## tBodyGyroJerkMag.min..                         0.5454
+## tBodyGyroJerkMag.sma..                         2.8177
+## tBodyGyroJerkMag.energy..                      1.5974
+## tBodyGyroJerkMag.iqr..                         1.6339
+## tBodyGyroJerkMag.entropy..                     0.9349
+## tBodyGyroJerkMag.arCoeff..1                    1.2466
+## tBodyGyroJerkMag.arCoeff..2                    1.3237
+## tBodyGyroJerkMag.arCoeff..3                    0.9354
+## tBodyGyroJerkMag.arCoeff..4                    1.5255
+## fBodyAcc.mean...X                             14.9018
+## fBodyAcc.mean...Y                              0.8373
+## fBodyAcc.mean...Z                              1.1049
+## fBodyAcc.std...X                              13.9574
+## fBodyAcc.std...Y                               2.6252
+## fBodyAcc.std...Z                               2.5916
+## fBodyAcc.mad...X                              30.2175
+## fBodyAcc.mad...Y                               1.4432
+## fBodyAcc.mad...Z                               1.1414
+## fBodyAcc.max...X                              10.3852
+## fBodyAcc.max...Y                               4.6064
+## fBodyAcc.max...Z                               2.0954
+## fBodyAcc.min...X                               0.6368
+## fBodyAcc.min...Y                               0.4644
+## fBodyAcc.min...Z                               0.6605
+## fBodyAcc.sma..                                 2.3737
+## fBodyAcc.energy...X                           22.3222
+## fBodyAcc.energy...Y                            2.4323
+## fBodyAcc.energy...Z                            2.1479
+## fBodyAcc.iqr...X                               5.5227
+## fBodyAcc.iqr...Y                               0.5028
+## fBodyAcc.iqr...Z                               0.7084
+## fBodyAcc.entropy...X                          17.0177
+## fBodyAcc.entropy...Y                           3.5916
+## fBodyAcc.entropy...Z                           0.7664
+## fBodyAcc.maxInds.X                             1.5142
+## fBodyAcc.maxInds.Y                             1.7082
+## fBodyAcc.maxInds.Z                             0.5022
+## fBodyAcc.meanFreq...X                          3.3136
+## fBodyAcc.meanFreq...Y                          3.3642
+## fBodyAcc.meanFreq...Z                          6.1856
+## fBodyAcc.skewness...X                          6.9885
+## fBodyAcc.kurtosis...X                          5.7623
+## fBodyAcc.skewness...Y                          2.6161
+## fBodyAcc.kurtosis...Y                          2.4931
+## fBodyAcc.skewness...Z                          2.0855
+## fBodyAcc.kurtosis...Z                          1.6120
+## fBodyAcc.bandsEnergy...1.8                    17.0506
+## fBodyAcc.bandsEnergy...9.16                    5.0088
+## fBodyAcc.bandsEnergy...17.24                   1.2331
+## fBodyAcc.bandsEnergy...25.32                   0.9047
+## fBodyAcc.bandsEnergy...33.40                   0.9253
+## fBodyAcc.bandsEnergy...41.48                   0.7269
+## fBodyAcc.bandsEnergy...49.56                   0.5770
+## fBodyAcc.bandsEnergy...57.64                   0.6843
+## fBodyAcc.bandsEnergy...1.16                   14.3980
+## fBodyAcc.bandsEnergy...17.32                   4.3264
+## fBodyAcc.bandsEnergy...33.48                   1.5903
+## fBodyAcc.bandsEnergy...49.64                   0.6847
+## fBodyAcc.bandsEnergy...1.24                   20.1237
+## fBodyAcc.bandsEnergy...25.48                   0.9983
+## fBodyAcc.bandsEnergy...1.8.1                   6.2865
+## fBodyAcc.bandsEnergy...9.16.1                  1.5529
+## fBodyAcc.bandsEnergy...17.24.1                 1.3553
+## fBodyAcc.bandsEnergy...25.32.1                 0.7137
+## fBodyAcc.bandsEnergy...33.40.1                 0.5354
+## fBodyAcc.bandsEnergy...41.48.1                 0.6718
+## fBodyAcc.bandsEnergy...49.56.1                 0.6227
+## fBodyAcc.bandsEnergy...57.64.1                 0.4157
+## fBodyAcc.bandsEnergy...1.16.1                  2.2375
+## fBodyAcc.bandsEnergy...17.32.1                 1.0476
+## fBodyAcc.bandsEnergy...33.48.1                 0.6623
+## fBodyAcc.bandsEnergy...49.64.1                 0.6435
+## fBodyAcc.bandsEnergy...1.24.1                  2.5375
+## fBodyAcc.bandsEnergy...25.48.1                 0.9182
+## fBodyAcc.bandsEnergy...1.8.2                   2.8579
+## fBodyAcc.bandsEnergy...9.16.2                  0.7679
+## fBodyAcc.bandsEnergy...17.24.2                 2.7142
+## fBodyAcc.bandsEnergy...25.32.2                 1.1883
+## fBodyAcc.bandsEnergy...33.40.2                 0.8127
+## fBodyAcc.bandsEnergy...41.48.2                 0.7208
+## fBodyAcc.bandsEnergy...49.56.2                 0.4829
+## fBodyAcc.bandsEnergy...57.64.2                 0.5770
+## fBodyAcc.bandsEnergy...1.16.2                  2.7904
+## fBodyAcc.bandsEnergy...17.32.2                 1.8031
+## fBodyAcc.bandsEnergy...33.48.2                 0.8112
+## fBodyAcc.bandsEnergy...49.64.2                 0.6122
+## fBodyAcc.bandsEnergy...1.24.2                  2.0140
+## fBodyAcc.bandsEnergy...25.48.2                 1.1441
+## fBodyAccJerk.mean...X                         19.0964
+## fBodyAccJerk.mean...Y                          9.9682
+## fBodyAccJerk.mean...Z                          1.0428
+## fBodyAccJerk.std...X                          19.2633
+## fBodyAccJerk.std...Y                           8.9307
+## fBodyAccJerk.std...Z                           1.6931
+## fBodyAccJerk.mad...X                          22.3556
+## fBodyAccJerk.mad...Y                           5.5678
+## fBodyAccJerk.mad...Z                           1.3415
+## fBodyAccJerk.max...X                          19.6810
+## fBodyAccJerk.max...Y                           9.3661
+## fBodyAccJerk.max...Z                           1.1695
+## fBodyAccJerk.min...X                           0.4608
+## fBodyAccJerk.min...Y                           0.5145
+## fBodyAccJerk.min...Z                           0.5816
+## fBodyAccJerk.sma..                             7.0579
+## fBodyAccJerk.energy...X                       24.4501
+## fBodyAccJerk.energy...Y                       16.2872
+## fBodyAccJerk.energy...Z                        1.0232
+## fBodyAccJerk.iqr...X                          10.0205
+## fBodyAccJerk.iqr...Y                           2.1205
+## fBodyAccJerk.iqr...Z                           1.3513
+## fBodyAccJerk.entropy...X                      21.7018
+## fBodyAccJerk.entropy...Y                       4.8665
+## fBodyAccJerk.entropy...Z                       2.2695
+## fBodyAccJerk.maxInds.X                         7.3778
+## fBodyAccJerk.maxInds.Y                         0.8074
+## fBodyAccJerk.maxInds.Z                         3.0882
+## fBodyAccJerk.meanFreq...X                      1.0902
+## fBodyAccJerk.meanFreq...Y                      0.9469
+## fBodyAccJerk.meanFreq...Z                      1.4501
+## fBodyAccJerk.skewness...X                      0.9733
+## fBodyAccJerk.kurtosis...X                      0.9677
+## fBodyAccJerk.skewness...Y                      2.2437
+## fBodyAccJerk.kurtosis...Y                      1.5580
+## fBodyAccJerk.skewness...Z                      0.9238
+## fBodyAccJerk.kurtosis...Z                      0.8411
+## fBodyAccJerk.bandsEnergy...1.8                32.4223
+## fBodyAccJerk.bandsEnergy...9.16                3.1781
+## fBodyAccJerk.bandsEnergy...17.24               3.1782
+## fBodyAccJerk.bandsEnergy...25.32               2.7109
+## fBodyAccJerk.bandsEnergy...33.40               2.6276
+## fBodyAccJerk.bandsEnergy...41.48               1.3127
+## fBodyAccJerk.bandsEnergy...49.56               0.6550
+## fBodyAccJerk.bandsEnergy...57.64               0.4931
+## fBodyAccJerk.bandsEnergy...1.16               37.8304
+## fBodyAccJerk.bandsEnergy...17.32               2.5984
+## fBodyAccJerk.bandsEnergy...33.48               5.6677
+## fBodyAccJerk.bandsEnergy...49.64               0.5685
+## fBodyAccJerk.bandsEnergy...1.24               36.6551
+## fBodyAccJerk.bandsEnergy...25.48               3.1501
+## fBodyAccJerk.bandsEnergy...1.8.1               6.0682
+## fBodyAccJerk.bandsEnergy...9.16.1              7.8796
+## fBodyAccJerk.bandsEnergy...17.24.1             1.0547
+## fBodyAccJerk.bandsEnergy...25.32.1             2.2768
+## fBodyAccJerk.bandsEnergy...33.40.1             0.6336
+## fBodyAccJerk.bandsEnergy...41.48.1             0.8363
+## fBodyAccJerk.bandsEnergy...49.56.1             0.7347
+## fBodyAccJerk.bandsEnergy...57.64.1             0.6387
+## fBodyAccJerk.bandsEnergy...1.16.1             10.3396
+## fBodyAccJerk.bandsEnergy...17.32.1             1.1454
+## fBodyAccJerk.bandsEnergy...33.48.1             0.8711
+## fBodyAccJerk.bandsEnergy...49.64.1             0.6965
+## fBodyAccJerk.bandsEnergy...1.24.1             13.4471
+## fBodyAccJerk.bandsEnergy...25.48.1             3.7275
+## fBodyAccJerk.bandsEnergy...1.8.2               3.5619
+## fBodyAccJerk.bandsEnergy...9.16.2              0.9429
+## fBodyAccJerk.bandsEnergy...17.24.2             3.4052
+## fBodyAccJerk.bandsEnergy...25.32.2             1.2754
+## fBodyAccJerk.bandsEnergy...33.40.2             1.0885
+## fBodyAccJerk.bandsEnergy...41.48.2             0.8807
+## fBodyAccJerk.bandsEnergy...49.56.2             0.6535
+## fBodyAccJerk.bandsEnergy...57.64.2             0.5651
+## fBodyAccJerk.bandsEnergy...1.16.2              0.9673
+## fBodyAccJerk.bandsEnergy...17.32.2             2.2089
+## fBodyAccJerk.bandsEnergy...33.48.2             1.1736
+## fBodyAccJerk.bandsEnergy...49.64.2             0.9866
+## fBodyAccJerk.bandsEnergy...1.24.2              1.1121
+## fBodyAccJerk.bandsEnergy...25.48.2             1.4721
+## fBodyGyro.mean...X                             6.8260
+## fBodyGyro.mean...Y                             1.4138
+## fBodyGyro.mean...Z                             3.1732
+## fBodyGyro.std...X                              9.8380
+## fBodyGyro.std...Y                              1.7774
+## fBodyGyro.std...Z                              3.6849
+## fBodyGyro.mad...X                              7.5956
+## fBodyGyro.mad...Y                              1.4947
+## fBodyGyro.mad...Z                              1.6428
+## fBodyGyro.max...X                              7.1758
+## fBodyGyro.max...Y                              1.6263
+## fBodyGyro.max...Z                              4.1980
+## fBodyGyro.min...X                              0.9276
+## fBodyGyro.min...Y                              0.6057
+## fBodyGyro.min...Z                              1.3907
+## fBodyGyro.sma..                                2.4419
+## fBodyGyro.energy...X                           7.4445
+## fBodyGyro.energy...Y                           1.9849
+## fBodyGyro.energy...Z                           2.9561
+## fBodyGyro.iqr...X                              1.2783
+## fBodyGyro.iqr...Y                              1.2205
+## fBodyGyro.iqr...Z                              0.9754
+## fBodyGyro.entropy...X                          5.8222
+## fBodyGyro.entropy...Y                          1.7771
+## fBodyGyro.entropy...Z                          2.2934
+## fBodyGyro.maxInds.X                           10.7804
+## fBodyGyro.maxInds.Y                            3.4348
+## fBodyGyro.maxInds.Z                           16.2432
+## fBodyGyro.meanFreq...X                        13.3328
+## fBodyGyro.meanFreq...Y                         1.0657
+## fBodyGyro.meanFreq...Z                         1.6018
+## fBodyGyro.skewness...X                         4.1979
+## fBodyGyro.kurtosis...X                         3.5176
+## fBodyGyro.skewness...Y                         2.2651
+## fBodyGyro.kurtosis...Y                         2.2399
+## fBodyGyro.skewness...Z                         2.3854
+## fBodyGyro.kurtosis...Z                         2.6785
+## fBodyGyro.bandsEnergy...1.8                   10.4891
+## fBodyGyro.bandsEnergy...9.16                   5.6543
+## fBodyGyro.bandsEnergy...17.24                  1.6626
+## fBodyGyro.bandsEnergy...25.32                  1.4147
+## fBodyGyro.bandsEnergy...33.40                  0.9863
+## fBodyGyro.bandsEnergy...41.48                  1.3378
+## fBodyGyro.bandsEnergy...49.56                  0.9646
+## fBodyGyro.bandsEnergy...57.64                  1.1906
+## fBodyGyro.bandsEnergy...1.16                   8.4701
+## fBodyGyro.bandsEnergy...17.32                  1.3879
+## fBodyGyro.bandsEnergy...33.48                  1.6017
+## fBodyGyro.bandsEnergy...49.64                  1.0844
+## fBodyGyro.bandsEnergy...1.24                   8.5628
+## fBodyGyro.bandsEnergy...25.48                  1.0040
+## fBodyGyro.bandsEnergy...1.8.1                  2.1820
+## fBodyGyro.bandsEnergy...9.16.1                 0.7834
+## fBodyGyro.bandsEnergy...17.24.1                1.8884
+## fBodyGyro.bandsEnergy...25.32.1                1.6447
+## fBodyGyro.bandsEnergy...33.40.1                0.7191
+## fBodyGyro.bandsEnergy...41.48.1                0.9951
+## fBodyGyro.bandsEnergy...49.56.1                0.6062
+## fBodyGyro.bandsEnergy...57.64.1                0.7328
+## fBodyGyro.bandsEnergy...1.16.1                 1.8948
+## fBodyGyro.bandsEnergy...17.32.1                2.5104
+## fBodyGyro.bandsEnergy...33.48.1                0.9346
+## fBodyGyro.bandsEnergy...49.64.1                0.6619
+## fBodyGyro.bandsEnergy...1.24.1                 2.3500
+## fBodyGyro.bandsEnergy...25.48.1                1.5428
+## fBodyGyro.bandsEnergy...1.8.2                  2.7494
+## fBodyGyro.bandsEnergy...9.16.2                 5.5552
+## fBodyGyro.bandsEnergy...17.24.2                1.6577
+## fBodyGyro.bandsEnergy...25.32.2                1.7208
+## fBodyGyro.bandsEnergy...33.40.2                0.7626
+## fBodyGyro.bandsEnergy...41.48.2                1.0425
+## fBodyGyro.bandsEnergy...49.56.2                1.1201
+## fBodyGyro.bandsEnergy...57.64.2                1.2452
+## fBodyGyro.bandsEnergy...1.16.2                 3.9475
+## fBodyGyro.bandsEnergy...17.32.2                2.6340
+## fBodyGyro.bandsEnergy...33.48.2                1.2711
+## fBodyGyro.bandsEnergy...49.64.2                1.4413
+## fBodyGyro.bandsEnergy...1.24.2                 2.3043
+## fBodyGyro.bandsEnergy...25.48.2                1.2892
+## fBodyAccMag.mean..                            13.7269
+## fBodyAccMag.std..                             20.8696
+## fBodyAccMag.mad..                             25.6626
+## fBodyAccMag.max..                              6.1840
+## fBodyAccMag.min..                              0.6504
+## fBodyAccMag.sma..                             20.9204
+## fBodyAccMag.energy..                          31.6260
+## fBodyAccMag.iqr..                              1.9474
+## fBodyAccMag.entropy..                          5.9728
+## fBodyAccMag.maxInds                            1.2791
+## fBodyAccMag.meanFreq..                         8.1158
+## fBodyAccMag.skewness..                         0.7831
+## fBodyAccMag.kurtosis..                         0.8390
+## fBodyBodyAccJerkMag.mean..                     6.0361
+## fBodyBodyAccJerkMag.std..                     12.4331
+## fBodyBodyAccJerkMag.mad..                      6.3689
+## fBodyBodyAccJerkMag.max..                     13.6278
+## fBodyBodyAccJerkMag.min..                      0.6326
+## fBodyBodyAccJerkMag.sma..                     10.2037
+## fBodyBodyAccJerkMag.energy..                   5.1774
+## fBodyBodyAccJerkMag.iqr..                      2.1316
+## fBodyBodyAccJerkMag.entropy..                  0.4845
+## fBodyBodyAccJerkMag.maxInds                    0.6242
+## fBodyBodyAccJerkMag.meanFreq..                 0.9763
+## fBodyBodyAccJerkMag.skewness..                 3.2312
+## fBodyBodyAccJerkMag.kurtosis..                 4.1810
+## fBodyBodyGyroMag.mean..                        0.8843
+## fBodyBodyGyroMag.std..                         0.9464
+## fBodyBodyGyroMag.mad..                         0.8911
+## fBodyBodyGyroMag.max..                         0.8526
+## fBodyBodyGyroMag.min..                         0.7545
+## fBodyBodyGyroMag.sma..                         0.9577
+## fBodyBodyGyroMag.energy..                      0.8241
+## fBodyBodyGyroMag.iqr..                         0.8756
+## fBodyBodyGyroMag.entropy..                     0.7778
+## fBodyBodyGyroMag.maxInds                       3.5601
+## fBodyBodyGyroMag.meanFreq..                    4.5897
+## fBodyBodyGyroMag.skewness..                    1.4223
+## fBodyBodyGyroMag.kurtosis..                    1.6187
+## fBodyBodyGyroJerkMag.mean..                    0.9482
+## fBodyBodyGyroJerkMag.std..                     3.6777
+## fBodyBodyGyroJerkMag.mad..                     1.2074
+## fBodyBodyGyroJerkMag.max..                     4.1060
+## fBodyBodyGyroJerkMag.min..                     0.5343
+## fBodyBodyGyroJerkMag.sma..                     0.7079
+## fBodyBodyGyroJerkMag.energy..                  1.1212
+## fBodyBodyGyroJerkMag.iqr..                     0.6684
+## fBodyBodyGyroJerkMag.entropy..                 0.6877
+## fBodyBodyGyroJerkMag.maxInds                   0.8334
+## fBodyBodyGyroJerkMag.meanFreq..                1.2534
+## fBodyBodyGyroJerkMag.skewness..                2.3320
+## fBodyBodyGyroJerkMag.kurtosis..                2.0582
+## angle.tBodyAccMean.gravity.                    0.5810
+## angle.tBodyAccJerkMean..gravityMean.           0.4699
+## angle.tBodyGyroMean.gravityMean.               2.4040
+## angle.tBodyGyroJerkMean.gravityMean.           1.2811
+## angle.X.gravityMean.                         106.7852
+## angle.Y.gravityMean.                         102.0760
+## angle.Z.gravityMean.                          41.6442
+## subject                                        3.7524
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 1))
+varImpPlot(train.rf, main = &quot;Importance Plot&quot;, cex = 0.7)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAA3lBMVEX9/v0AAAAAACoAAFQAKioAKn8AVX8AVakqAAAqACoqKgAqKioqKlQqKn8qVX8qVakqf38qf6kqf9NUAABUAFRUKipUKlRUKn9UVQBUVSpUVVRUVX9UValUf39Uf6lUf9NUqalUqdNUqf1/KgB/Kip/KlR/VVR/VX9/fyp/f1R/f6l/qX9/qf1/1Kl/1P2pVQCpVSqpVVSpfyqpf3+pqVSp1H+p/qmp/tOp/v2+vr7TfyrTf1TTf3/TqVTTqX/T1H/T1P3T/qnT/tPT/v39qVT9qX/91H/9/qn9/tP9/v3v2i1cAAAASnRSTlP/////////////////////////////////////////////////////////////////////////////////////////////////AForvxsAAAAJcEhZcwAACxIAAAsSAdLdfvwAABfUSURBVHic7Z0PQ9tIksVXdnLkwmSSFZlN4JjNRSQhySYG9pKM1yy3s0OfbX3/L3SqbgnbIP/pVrUkeO834wByt2h4dMuup6r+U04g+VPXAyDdQOFBofCgUHhQKDwoFB4UCg8KhQeFwoNC4UGh8KBQeFAoPCgUHhQKDwqFB4XCg0Lha5j+52j9k+cbnsunT5IkeXy9OMHG1l1C4WvYJLwZbBS+6Dk7SG9OsLl1l1D4GgrdJoOnyX+cFJPXFJ88vs7PkmQvN0lSfDX4eiCz2gxfJ8NxPpEn5Om07FkJLz3mJ0lflafwNVjhRybJpk+yYs4WSprhWP5NsnIOF/8W/1dPZxN5OsuXl/qyR191p/B1iPDDcalsMavP9iYy6fdERnkUk3nglM3kCTvh3ZQv13g5wU2PfkLha1gRPskWM94JfyYXgFL44pP5Serkz5eF54y/h6zO+NeLa3wh4/TJ4FOSPLJLgSzvE1nai2t5YrVfCO96FK17qjyF34Is9Q8RCr8FCk8eFBQeFAoPCoUHhcKDQuFBofCgUHhQKDwoFB4UCg8KhQeFwoNC4UHppfAJ0aT2d9xP4bsewIOCwoNC4UGh8KBQeFAoPCgUHhQKDwqFB4XCg0LhcVgJ0/oIP8nKhP8bTDqR/O/NVUJunSTNzd72ZjVQ+GYkK79CD+FnB8NveyK/2R9+TJKjNJ8c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" alt="plot of chunk unnamed-chunk-6"/> </p>
+
+<pre><code class="r">getTree(train.rf, k = 1)
+</code></pre>
+
+<pre><code>##     left daughter right daughter split var split point status prediction
+## 1               2              3       102   -0.868986      1          0
+## 2               4              5        59   -0.615429      1          0
+## 3               6              7       216   -0.181375      1          0
+## 4               8              9       130   -0.883964      1          0
+## 5              10             11       470   -0.999976      1          0
+## 6              12             13        71    0.328722      1          0
+## 7              14             15       457   -0.070231      1          0
+## 8              16             17       345   -0.997205      1          0
+## 9              18             19       452   -0.084180      1          0
+## 10             20             21       132   -0.752320      1          0
+## 11             22             23        66   -0.997548      1          0
+## 12             24             25       513    0.057699      1          0
+## 13             26             27        42   -0.161406      1          0
+## 14             28             29        90   -0.366236      1          0
+## 15             30             31        55    0.038989      1          0
+## 16             32             33       244   -0.997459      1          0
+## 17             34             35       553   -0.937878      1          0
+## 18             36             37       150   -0.375917      1          0
+## 19             38             39       125   -0.992912      1          0
+## 20             40             41        57   -0.722078      1          0
+## 21             42             43       117    0.333365      1          0
+## 22              0              0         0    0.000000     -1          2
+## 23             44             45        41    0.114203      1          0
+## 24             46             47       504   -0.335389      1          0
+## 25             48             49        51   -0.393227      1          0
+## 26             50             51        66   -0.526252      1          0
+## 27             52             53        55   -0.316464      1          0
+## 28             54             55       560    0.282933      1          0
+## 29             56             57       419   -0.969648      1          0
+## 30             58             59        38   -0.628479      1          0
+## 31              0              0         0    0.000000     -1          5
+## 32              0              0         0    0.000000     -1          2
+## 33             60             61       244   -0.988387      1          0
+## 34              0              0         0    0.000000     -1          3
+## 35             62             63       178   -0.999989      1          0
+## 36             64             65        54   -0.133760      1          0
+## 37             66             67        57   -0.260492      1          0
+## 38             68             69       540    0.158691      1          0
+## 39             70             71        64   -0.966003      1          0
+## 40              0              0         0    0.000000     -1          1
+## 41              0              0         0    0.000000     -1          2
+## 42              0              0         0    0.000000     -1          2
+## 43              0              0         0    0.000000     -1          1
+## 44              0              0         0    0.000000     -1          1
+## 45             72             73       145   -0.663281      1          0
+## 46             74             75        55   -0.484943      1          0
+## 47             76             77       131   -0.561837      1          0
+## 48             78             79       202   -0.347401      1          0
+## 49             80             81       396   -0.391245      1          0
+## 50             82             83        23    0.225709      1          0
+## 51             84             85       373   -0.268065      1          0
+## 52              0              0         0    0.000000     -1          6
+## 53             86             87       245   -0.284196      1          0
+## 54             88             89       560   -0.075006      1          0
+## 55              0              0         0    0.000000     -1          6
+## 56             90             91       350   -0.686589      1          0
+## 57             92             93        66   -0.208368      1          0
+## 58              0              0         0    0.000000     -1          5
+## 59              0              0         0    0.000000     -1          6
+## 60             94             95       424   -0.996607      1          0
+## 61              0              0         0    0.000000     -1          2
+## 62             96             97       259   -0.999994      1          0
+## 63             98             99       504   -0.477606      1          0
+## 64            100            101        60   -0.682358      1          0
+## 65            102            103        51    0.642901      1          0
+## 66              0              0         0    0.000000     -1          1
+## 67            104            105       123    0.202355      1          0
+## 68            106            107       424   -0.995687      1          0
+## 69              0              0         0    0.000000     -1          2
+## 70            108            109        54   -0.070803      1          0
+## 71            110            111       314   -0.998261      1          0
+## 72              0              0         0    0.000000     -1          3
+## 73              0              0         0    0.000000     -1          2
+## 74              0              0         0    0.000000     -1          6
+## 75            112            113        66   -0.626233      1          0
+## 76              0              0         0    0.000000     -1          5
+## 77            114            115       189    0.464073      1          0
+## 78            116            117       531   -0.544984      1          0
+## 79              0              0         0    0.000000     -1          6
+## 80            118            119       170   -0.784699      1          0
+## 81            120            121        42   -0.296169      1          0
+## 82            122            123       385   -0.793092      1          0
+## 83            124            125        90   -0.084529      1          0
+## 84            126            127       356   -0.679768      1          0
+## 85            128            129       506   -0.457464      1          0
+## 86            130            131       211    0.269193      1          0
+## 87            132            133       560    0.162913      1          0
+## 88              0              0         0    0.000000     -1          1
+## 89            134            135        22   -0.065016      1          0
+## 90              0              0         0    0.000000     -1          5
+## 91              0              0         0    0.000000     -1          6
+## 92            136            137       466   -0.461864      1          0
+## 93            138            139        25    0.311190      1          0
+## 94            140            141       330   -0.999853      1          0
+## 95            142            143       107   -0.135128      1          0
+## 96              0              0         0    0.000000     -1          2
+## 97            144            145       446   -0.860285      1          0
+## 98            146            147        47   -0.999655      1          0
+## 99              0              0         0    0.000000     -1          1
+## 100             0              0         0    0.000000     -1          3
+## 101             0              0         0    0.000000     -1          2
+## 102           148            149       119   -0.399464      1          0
+## 103             0              0         0    0.000000     -1          1
+## 104           150            151        36   -0.039583      1          0
+## 105             0              0         0    0.000000     -1          2
+## 106             0              0         0    0.000000     -1          2
+## 107           152            153       201   -0.985454      1          0
+## 108           154            155       430   -0.993548      1          0
+## 109           156            157        72    0.131980      1          0
+## 110           158            159        53    0.206741      1          0
+## 111           160            161        56    0.041710      1          0
+## 112           162            163       220   -0.700675      1          0
+## 113           164            165       457    0.273445      1          0
+## 114             0              0         0    0.000000     -1          6
+## 115             0              0         0    0.000000     -1          4
+## 116             0              0         0    0.000000     -1          6
+## 117             0              0         0    0.000000     -1          4
+## 118           166            167       353   -0.753492      1          0
+## 119           168            169       126    0.517489      1          0
+## 120             0              0         0    0.000000     -1          6
+## 121           170            171       384   -0.344329      1          0
+## 122           172            173       146   -0.416611      1          0
+## 123           174            175       305   -0.846148      1          0
+## 124           176            177       183    0.722470      1          0
+## 125             0              0         0    0.000000     -1          5
+## 126             0              0         0    0.000000     -1          6
+## 127           178            179       509   -0.818248      1          0
+## 128             0              0         0    0.000000     -1          4
+## 129             0              0         0    0.000000     -1          6
+## 130           180            181       341   -0.848200      1          0
+## 131           182            183       146   -0.403308      1          0
+## 132           184            185       304   -0.672194      1          0
+## 133           186            187        73    0.612342      1          0
+## 134             0              0         0    0.000000     -1          5
+## 135           188            189        73    0.155110      1          0
+## 136           190            191       236   -0.700097      1          0
+## 137           192            193       505    0.173468      1          0
+## 138             0              0         0    0.000000     -1          4
+## 139             0              0         0    0.000000     -1          5
+## 140             0              0         0    0.000000     -1          2
+## 141           194            195       259   -0.999989      1          0
+## 142             0              0         0    0.000000     -1          2
+## 143             0              0         0    0.000000     -1          3
+## 144           196            197       390   -0.999985      1          0
+## 145             0              0         0    0.000000     -1          3
+## 146             0              0         0    0.000000     -1          1
+## 147           198            199       192    0.637184      1          0
+## 148           200            201       452   -0.281487      1          0
+## 149           202            203       374    0.086094      1          0
+## 150           204            205        56   -0.467198      1          0
+## 151           206            207        78   -0.995156      1          0
+## 152           208            209        43    0.141753      1          0
+## 153             0              0         0    0.000000     -1          1
+## 154           210            211        92   -0.996979      1          0
+## 155           212            213       133    0.845394      1          0
+## 156           214            215       559    0.066650      1          0
+## 157           216            217       248   -0.242697      1          0
+## 158             0              0         0    0.000000     -1          1
+## 159           218            219       513   -0.497513      1          0
+## 160           220            221        42    0.448578      1          0
+## 161             0              0         0    0.000000     -1          2
+## 162           222            223       235    0.534137      1          0
+## 163           224            225       481   -0.918049      1          0
+## 164           226            227       408   -0.822128      1          0
+## 165             0              0         0    0.000000     -1          6
+## 166             0              0         0    0.000000     -1          1
+## 167             0              0         0    0.000000     -1          6
+## 168           228            229       527   -0.667063      1          0
+## 169             0              0         0    0.000000     -1          6
+## 170           230            231       362   -0.575794      1          0
+## 171             0              0         0    0.000000     -1          5
+## 172           232            233       416   -0.839447      1          0
+## 173           234            235       189    0.107867      1          0
+## 174             0              0         0    0.000000     -1          6
+## 175             0              0         0    0.000000     -1          5
+## 176           236            237       127    0.249424      1          0
+## 177           238            239       320   -0.880161      1          0
+## 178             0              0         0    0.000000     -1          4
+## 179           240            241       302   -0.569810      1          0
+## 180             0              0         0    0.000000     -1          4
+## 181             0              0         0    0.000000     -1          5
+## 182           242            243        49   -0.875406      1          0
+## 183           244            245       418   -0.894623      1          0
+## 184             0              0         0    0.000000     -1          5
+## 185             0              0         0    0.000000     -1          4
+## 186             0              0         0    0.000000     -1          4
+## 187             0              0         0    0.000000     -1          6
+## 188             0              0         0    0.000000     -1          4
+## 189             0              0         0    0.000000     -1          6
+## 190             0              0         0    0.000000     -1          6
+## 191           246            247       280   -0.997072      1          0
+## 192             0              0         0    0.000000     -1          4
+## 193             0              0         0    0.000000     -1          5
+## 194             0              0         0    0.000000     -1          3
+## 195             0              0         0    0.000000     -1          1
+## 196           248            249        27   -0.063441      1          0
+## 197           250            251       331   -0.999944      1          0
+## 198           252            253       377   -0.496172      1          0
+## 199             0              0         0    0.000000     -1          1
+## 200             0              0         0    0.000000     -1          3
+## 201           254            255       360   -0.939076      1          0
+## 202           256            257       535   -0.848830      1          0
+## 203             0              0         0    0.000000     -1          3
+## 204           258            259       462   -0.999259      1          0
+## 205           260            261        50    0.726838      1          0
+## 206             0              0         0    0.000000     -1          2
+## 207           262            263       483   -0.979937      1          0
+## 208             0              0         0    0.000000     -1          3
+## 209           264            265       335   -0.999777      1          0
+## 210             0              0         0    0.000000     -1          3
+## 211           266            267       502   -0.999987      1          0
+## 212           268            269       308   -0.999968      1          0
+## 213           270            271       386   -0.999940      1          0
+## 214           272            273       493   -0.999167      1          0
+## 215             0              0         0    0.000000     -1          1
+## 216             0              0         0    0.000000     -1          2
+## 217             0              0         0    0.000000     -1          1
+## 218             0              0         0    0.000000     -1          3
+## 219           274            275       138   -0.999927      1          0
+## 220             0              0         0    0.000000     -1          3
+## 221             0              0         0    0.000000     -1          1
+## 222             0              0         0    0.000000     -1          4
+## 223             0              0         0    0.000000     -1          5
+## 224             0              0         0    0.000000     -1          6
+## 225             0              0         0    0.000000     -1          4
+## 226             0              0         0    0.000000     -1          6
+## 227           276            277       471   -0.870844      1          0
+## 228             0              0         0    0.000000     -1          6
+## 229           278            279        25   -0.234564      1          0
+## 230             0              0         0    0.000000     -1          6
+## 231             0              0         0    0.000000     -1          4
+## 232             0              0         0    0.000000     -1          6
+## 233           280            281       560    0.295641      1          0
+## 234             0              0         0    0.000000     -1          6
+## 235             0              0         0    0.000000     -1          4
+## 236             0              0         0    0.000000     -1          6
+## 237             0              0         0    0.000000     -1          4
+## 238             0              0         0    0.000000     -1          4
+## 239             0              0         0    0.000000     -1          6
+## 240             0              0         0    0.000000     -1          5
+## 241             0              0         0    0.000000     -1          6
+## 242           282            283        40    0.439770      1          0
+## 243           284            285       390   -0.952158      1          0
+## 244           286            287       136   -0.429210      1          0
+## 245             0              0         0    0.000000     -1          4
+## 246             0              0         0    0.000000     -1          6
+## 247           288            289       559   -0.448093      1          0
+## 248             0              0         0    0.000000     -1          3
+## 249             0              0         0    0.000000     -1          2
+## 250             0              0         0    0.000000     -1          3
+## 251           290            291        42   -0.212143      1          0
+## 252           292            293       263   -0.681586      1          0
+## 253             0              0         0    0.000000     -1          3
+## 254             0              0         0    0.000000     -1          3
+## 255             0              0         0    0.000000     -1          2
+## 256           294            295       552    0.245708      1          0
+## 257           296            297       449   -0.966667      1          0
+## 258           298            299       227   -0.994747      1          0
+## 259             0              0         0    0.000000     -1          3
+## 260             0              0         0    0.000000     -1          2
+## 261           300            301       199    0.377741      1          0
+## 262           302            303       320   -0.999955      1          0
+## 263             0              0         0    0.000000     -1          2
+## 264             0              0         0    0.000000     -1          3
+## 265             0              0         0    0.000000     -1          2
+## 266             0              0         0    0.000000     -1          3
+## 267             0              0         0    0.000000     -1          2
+## 268             0              0         0    0.000000     -1          2
+## 269           304            305       142   -0.996382      1          0
+## 270             0              0         0    0.000000     -1          3
+## 271             0              0         0    0.000000     -1          2
+## 272           306            307       191    0.276237      1          0
+## 273           308            309       510   -0.958830      1          0
+## 274           310            311        80   -0.286535      1          0
+## 275           312            313        50    0.903147      1          0
+## 276             0              0         0    0.000000     -1          4
+## 277           314            315       114    0.113679      1          0
+## 278             0              0         0    0.000000     -1          5
+## 279           316            317       449   -0.966667      1          0
+## 280             0              0         0    0.000000     -1          4
+## 281             0              0         0    0.000000     -1          6
+## 282             0              0         0    0.000000     -1          5
+## 283             0              0         0    0.000000     -1          4
+## 284             0              0         0    0.000000     -1          1
+## 285             0              0         0    0.000000     -1          6
+## 286             0              0         0    0.000000     -1          1
+## 287             0              0         0    0.000000     -1          2
+## 288           318            319       553    0.232131      1          0
+## 289             0              0         0    0.000000     -1          6
+## 290             0              0         0    0.000000     -1          3
+## 291             0              0         0    0.000000     -1          2
+## 292             0              0         0    0.000000     -1          1
+## 293           320            321       558    0.832396      1          0
+## 294           322            323       195   -0.313396      1          0
+## 295             0              0         0    0.000000     -1          3
+## 296             0              0         0    0.000000     -1          3
+## 297             0              0         0    0.000000     -1          2
+## 298             0              0         0    0.000000     -1          3
+## 299             0              0         0    0.000000     -1          2
+## 300           324            325       561   -0.092384      1          0
+## 301           326            327       415   -0.998043      1          0
+## 302           328            329       275   -0.997808      1          0
+## 303           330            331        23   -0.926093      1          0
+## 304             0              0         0    0.000000     -1          2
+## 305           332            333       449   -0.033333      1          0
+## 306           334            335       392   -0.999942      1          0
+## 307           336            337       150   -0.231706      1          0
+## 308             0              0         0    0.000000     -1          2
+## 309             0              0         0    0.000000     -1          3
+## 310             0              0         0    0.000000     -1          3
+## 311             0              0         0    0.000000     -1          2
+## 312           338            339       301    0.444536      1          0
+## 313             0              0         0    0.000000     -1          3
+## 314             0              0         0    0.000000     -1          4
+## 315             0              0         0    0.000000     -1          6
+## 316           340            341       201   -0.159658      1          0
+## 317           342            343       480   -0.457038      1          0
+## 318           344            345       527   -0.724910      1          0
+## 319           346            347       409   -0.753024      1          0
+## 320           348            349       555   -0.758233      1          0
+## 321             0              0         0    0.000000     -1          3
+## 322             0              0         0    0.000000     -1          3
+## 323             0              0         0    0.000000     -1          2
+## 324           350            351       483   -0.950089      1          0
+## 325           352            353       398   -0.999911      1          0
+## 326             0              0         0    0.000000     -1          2
+## 327             0              0         0    0.000000     -1          3
+## 328             0              0         0    0.000000     -1          3
+## 329             0              0         0    0.000000     -1          2
+## 330             0              0         0    0.000000     -1          2
+## 331           354            355       523   -0.983342      1          0
+## 332           356            357       533   -0.999635      1          0
+## 333             0              0         0    0.000000     -1          2
+## 334           358            359       140   -0.993203      1          0
+## 335             0              0         0    0.000000     -1          2
+## 336             0              0         0    0.000000     -1          2
+## 337           360            361       350   -0.982937      1          0
+## 338           362            363       480   -0.999985      1          0
+## 339           364            365       401   -0.995702      1          0
+## 340             0              0         0    0.000000     -1          4
+## 341             0              0         0    0.000000     -1          5
+## 342           366            367       288    0.836881      1          0
+## 343             0              0         0    0.000000     -1          6
+## 344             0              0         0    0.000000     -1          6
+## 345           368            369       237    0.680642      1          0
+## 346             0              0         0    0.000000     -1          6
+## 347             0              0         0    0.000000     -1          5
+## 348             0              0         0    0.000000     -1          1
+## 349           370            371        41    0.146379      1          0
+## 350             0              0         0    0.000000     -1          2
+## 351             0              0         0    0.000000     -1          6
+## 352             0              0         0    0.000000     -1          2
+## 353             0              0         0    0.000000     -1          3
+## 354           372            373       326   -0.999882      1          0
+## 355           374            375       127   -0.981981      1          0
+## 356             0              0         0    0.000000     -1          2
+## 357           376            377        55   -0.391796      1          0
+## 358             0              0         0    0.000000     -1          2
+## 359             0              0         0    0.000000     -1          3
+## 360             0              0         0    0.000000     -1          3
+## 361           378            379       298   -0.968277      1          0
+## 362           380            381       457   -0.212158      1          0
+## 363             0              0         0    0.000000     -1          2
+## 364           382            383       118    0.173980      1          0
+## 365             0              0         0    0.000000     -1          3
+## 366           384            385       156    0.226599      1          0
+## 367             0              0         0    0.000000     -1          6
+## 368           386            387       220   -0.492792      1          0
+## 369           388            389       349   -0.043679      1          0
+## 370             0              0         0    0.000000     -1          1
+## 371           390            391        54   -0.140691      1          0
+## 372           392            393        64   -0.932296      1          0
+## 373           394            395       560    0.038546      1          0
+## 374           396            397       262    0.248096      1          0
+## 375           398            399       352   -0.985814      1          0
+## 376           400            401       335   -0.999773      1          0
+## 377           402            403       158    0.651604      1          0
+## 378             0              0         0    0.000000     -1          3
+## 379             0              0         0    0.000000     -1          2
+## 380             0              0         0    0.000000     -1          3
+## 381             0              0         0    0.000000     -1          2
+## 382           404            405       434   -0.987036      1          0
+## 383           406            407       480   -0.999625      1          0
+## 384             0              0         0    0.000000     -1          4
+## 385           408            409       173    0.431461      1          0
+## 386           410            411       177   -0.712087      1          0
+## 387             0              0         0    0.000000     -1          5
+## 388             0              0         0    0.000000     -1          5
+## 389             0              0         0    0.000000     -1          6
+## 390           412            413        92   -0.987198      1          0
+## 391           414            415       186   -0.428604      1          0
+## 392             0              0         0    0.000000     -1          3
+## 393             0              0         0    0.000000     -1          2
+## 394             0              0         0    0.000000     -1          2
+## 395           416            417       493   -0.999983      1          0
+## 396           418            419       350   -0.986367      1          0
+## 397             0              0         0    0.000000     -1          2
+## 398             0              0         0    0.000000     -1          2
+## 399           420            421       249   -0.584902      1          0
+## 400             0              0         0    0.000000     -1          2
+## 401             0              0         0    0.000000     -1          3
+## 402           422            423        58   -0.989655      1          0
+## 403             0              0         0    0.000000     -1          2
+## 404             0              0         0    0.000000     -1          3
+## 405             0              0         0    0.000000     -1          2
+## 406             0              0         0    0.000000     -1          3
+## 407             0              0         0    0.000000     -1          2
+## 408             0              0         0    0.000000     -1          5
+## 409             0              0         0    0.000000     -1          4
+## 410             0              0         0    0.000000     -1          5
+## 411             0              0         0    0.000000     -1          4
+## 412             0              0         0    0.000000     -1          3
+## 413             0              0         0    0.000000     -1          2
+## 414             0              0         0    0.000000     -1          3
+## 415           424            425       379   -0.975779      1          0
+## 416           426            427        32    0.059422      1          0
+## 417             0              0         0    0.000000     -1          3
+## 418             0              0         0    0.000000     -1          2
+## 419             0              0         0    0.000000     -1          3
+## 420           428            429       115    0.007891      1          0
+## 421           430            431       395   -0.999858      1          0
+## 422           432            433       184   -0.304538      1          0
+## 423             0              0         0    0.000000     -1          3
+## 424           434            435       399   -0.999878      1          0
+## 425             0              0         0    0.000000     -1          2
+## 426             0              0         0    0.000000     -1          2
+## 427             0              0         0    0.000000     -1          3
+## 428             0              0         0    0.000000     -1          3
+## 429             0              0         0    0.000000     -1          2
+## 430           436            437       345   -0.991303      1          0
+## 431             0              0         0    0.000000     -1          3
+## 432             0              0         0    0.000000     -1          3
+## 433             0              0         0    0.000000     -1          2
+## 434             0              0         0    0.000000     -1          3
+## 435             0              0         0    0.000000     -1          2
+## 436             0              0         0    0.000000     -1          3
+## 437             0              0         0    0.000000     -1          2
+</code></pre>
+
+<pre><code class="r">table(validateSet$activity, predict(train.rf, validateSet[, -563]))
+</code></pre>
+
+<pre><code>##           
+##            laying sitting standing walk walkdown walkup
+##   laying      277       0        0    0        0      0
+##   sitting       0     252        0    0        0      0
+##   standing      0       0      237    0        0      0
+##   walk          0       0        0  212        2      4
+##   walkdown      0       0        0    0      174      0
+##   walkup        0       0        0    0       10    189
+</code></pre>
+
+<h2>Cross-validate</h2>
+
+<h2>Apply to test set</h2>
+
+<pre><code class="r">table(testSet$activity, predict(train.rf, testSet[, -563]))
+</code></pre>
+
+<pre><code>##           
+##            laying sitting standing walk walkdown walkup
+##   laying      293       0        0    0        0      0
+##   sitting       0     225       39    0        0      0
+##   standing      0      26      257    0        0      0
+##   walk          0       0        0  228        0      1
+##   walkdown      0       0        0    1      195      4
+##   walkup        0       0        0    1        6    209
+</code></pre>
+
+<h3>Refine if validation</h3>
+
+</body>
+
+</html>
+

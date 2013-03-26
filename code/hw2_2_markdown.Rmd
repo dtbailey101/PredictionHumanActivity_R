@@ -1,0 +1,111 @@
+Homework 2
+====================
+
+Preprocessing
+-------------
+
+### Load Data
+Includes helper function to calculate Misclassification error rate.
+```{r}
+setwd("~/Users/SMW/Dropbox/Coursera/DA_012213/Homework/HW2/code")
+source('mcErrorRate.R')
+##download.file("https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda", "../data/samsungData.rda")
+```
+
+### Examine raw data
+```{r}
+names(samsungData)
+table(is.na(samsungData)) ## no NAs
+table(samsungData$subject)
+```
+There are no NAs found.
+21 subjects total, with numeric identifiers.
+
+### Data Munging
+Make variable names syntactically correct by removing parentheses, commas, etc.
+```{r}
+nameVec <- make.names(names(samsungData),unique=TRUE)
+names(samsungData) <- nameVec
+names(samsungData)
+```
+
+
+### make Training, and Test sets
+Training and test sets include the require subjects as noted.
+training set size has 17 subjects.
+Test set contains the required 4 subjects only.
+```{r}
+test1 <- c(27,28,29,30)
+train1 <-c(1,3,5,6)
+rest <- unique(samsungData$subject)
+rest <- setdiff(setdiff(rest,test1),train1)
+set.seed(35252)
+test1 <- c(test1, sample(rest,3, replace=FALSE))
+train1 <- setdiff(c(train1,rest),test1)
+trainSet <- samsungData[!(samsungData$subject %in% train1),]
+testSet <- samsungData[samsungData$subject %in% test1,]
+table(trainSet$subject)
+table(testSet$subject)
+```
+
+Pick Function
+-------------
+### Classification tree.
+First, create a classification tree using all variables as covariates.
+```{r}
+library(tree)
+train.tree <- tree(factor(activity)~.,data=trainSet)
+par(mfrow=c(1,1))
+plot(train.tree)
+text(train.tree, cex=0.5)
+summary(train.tree)
+```
+The resulting tree seems to indicate that energy and gravitational acceleration are good predictors. Why?
+1. When stationary, low energy. when moving, high energy.
+2. Gravitational acceleration is constant. When moving, the phone orientation changes, so possibly the mean acceleration for a particular axis would be lower than when stationary.
+3. Jerk should be more significant when moving up and down.
+
+
+#### Cross-validate tree
+```{r}
+par(mfrow=c(2,1))
+plot(cv.tree(train.tree,FUN=prune.tree,method="misclass"))
+plot(cv.tree(train.tree))
+cv.tree(train.tree)
+```
+Resulting tree is OK but not great. It seems to indicate an interest it gravity!
+
+#### Prune tree
+Try 6 nodes first, since 6 outcomes
+
+
+```{r}
+tree.predict <- predict(train.tree, trainSet[,-563])
+head(tree.predict)
+table(trainSet$activity, predict(train.tree, type="class"))
+```
+
+
+### random Forest
+```{r}
+library(randomForest)
+set.seed(37043)
+train.rf <- randomForest(factor(activity) ~., data=trainSet, prox=TRUE)
+print(train.rf)
+importance(train.rf)
+par(mfrow=c(1,1))
+varImpPlot(train.rf, main="Importance Plot", cex=0.7)
+getTree(train.rf,k=1)
+table(validateSet$activity,predict(train.rf,validateSet[,-563]))
+```
+
+Cross-validate
+--------------
+
+Apply to test set
+-----------------
+```{r}
+table(testSet$activity,predict(train.rf,testSet[,-563]))
+```
+
+### Refine if validation
