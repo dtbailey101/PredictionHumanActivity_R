@@ -1,5 +1,5 @@
-Predicting activities of daily living through a random-forest model with correlation-based filter
-===================================================================================================
+Predicting human activity from smartphone data
+==============================================
 
 Introduction
 ------------
@@ -60,9 +60,9 @@ The final random forest model with correlation-based feature extraction is reaso
  
 References
 ----------
-[1]: Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. “Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine”. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. “Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine”. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
 [2]: http://en.wikipedia.org/wiki/Decision_tree_learning "Decision Tree Learning"
-[3]: http://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm. "Random Forests™"
+[3]: http://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm. "Random Forests"
 [4]: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones “Human Activity Recognition Using Smartphones Data Set”
 [5]: http://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient “Spearman’s Rank Correlation Coefficient”
 [6]: http://en.wikipedia.org/wiki/Gini_coefficient “GINI Coefficient”
