@@ -4,7 +4,7 @@ Predicting human activity from smartphone data
 Introduction
 ------------
  Anguita et al. has attempted to classify physical activity such as walking, sitting, going up and down stairs, etc.  from smartphone data, using novel machine-learning techniques.
-For a provided portion of [Anguita et al.’s] [1] smartphone data set, we use a [classification-tree] [2] approach to build a model to predict the type of physical activity associated with smartphone measurements. The final model uses a [random forest] [3] with rudimentary feature extraction, in which correlation coefficients are used to filter unnecessary variables.
+For a provided portion of Anguita et al.’s (Ref 1) smartphone data set, we use a [classification-tree] [2] approach to build a model to predict the type of physical activity associated with smartphone measurements. The final model uses a [random forest] [3] with rudimentary feature extraction, in which correlation coefficients are used to filter unnecessary variables.
 
 Data Collection
 ---------------
@@ -60,7 +60,7 @@ The final random forest model with correlation-based feature extraction is reaso
  
 References
 ----------
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. “Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine”. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
+1: Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. “Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine”. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
 [2]: http://en.wikipedia.org/wiki/Decision_tree_learning "Decision Tree Learning"
 [3]: http://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm "Random Forests"
 [4]: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones “Human Activity Recognition Using Smartphones Data Set”
